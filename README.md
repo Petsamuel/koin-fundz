@@ -60,10 +60,10 @@ Our solution is aimed at 4 core factors and Premise
 
 Project Backed by :
 
-[Node](https://nodejs.org)
-[Hardhat](<https://hardhat.org/>)
-[EthersJs](<https://ethers.org/>)
-[Tailwind CSS](<https://tailwindcss.com/>)
+- [Node](https://nodejs.org)
+- [Hardhat](<https://hardhat.org/>)
+- [EthersJs](<https://ethers.org/>)
+- [Tailwind CSS](<https://tailwindcss.com/>)
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
