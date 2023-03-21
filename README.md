@@ -128,7 +128,7 @@ Loading ...
 
 - [Peter Samuel](https://github.com/petsamuel) - Software Engineer | full Stack
 - [Ayeola Kehinde](https://github.com/ayeolakenny) - Software Engineer | Web3 & Blockchain Developer
-- [ibrahim Dorcas](https://github.com/ayeolakenny) - Software Engineer | Technical Writer
+- [Ibrahim Dorcas](https://github.com/ayeolakenny) - Software Engineer | Technical Writer
 
 <!-- See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
 who participated in this project. -->
