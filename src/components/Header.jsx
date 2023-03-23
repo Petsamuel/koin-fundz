@@ -1,9 +1,13 @@
-import { useGlobalState } from "../store";
-import { connectWallet } from "../services/blockchain";
+import { useGlobalState, setGlobalState } from "../store";
 import { truncate } from "../helper/truncate";
 
 export const Header = () => {
   const [connectedAccount] = useGlobalState("connectedAccount");
+
+  const handleOpenWalletModal = () => {
+    if (connectedAccount) return;
+    else setGlobalState("isWalletModalOpen", true);
+  };
 
   return (
     <header class="text-gray-600 body-font">
@@ -31,7 +35,7 @@ export const Header = () => {
         </nav>
         <button
           class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-          onClick={connectWallet}
+          onClick={handleOpenWalletModal}
         >
           {connectedAccount
             ? truncate(connectedAccount, 4, 4, 11)
