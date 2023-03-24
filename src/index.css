@@ -34,6 +34,7 @@ code {
   border-radius: 100% 100% 50 0 / 100% 50% 100% 0;
   position: relative;
 
+
 }
 
 
@@ -48,6 +49,7 @@ code {
   background-size: 20px 20px;
   background-image:
     radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
+  border: none
 }
 
 .hero-section::after {
@@ -61,32 +63,35 @@ code {
   background-size: 40px 20px;
   background-image:
     radial-gradient(circle at 10px 15px, #ffff 12px, transparent 13px);
+  border: none
 }
 
 .statistics-bg::before {
   content: "";
   position: absolute;
   left: 0;
-  top: -8px;
+  top: -7px;
   right: 0;
   background-repeat: repeat;
   height: 10px;
   background-size: 20px 20px;
   background-image:
-    radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
+    radial-gradient(circle at 10px -25px, transparent 12px, #fff 13px);
+  border: none
 }
 
 .statistics-bg::after {
   content: "";
   position: absolute;
   left: 0;
-  top: 0px;
+  top: -12px;
   right: 0;
   background-repeat: repeat;
   height: 15px;
   background-size: 40px 20px;
   background-image:
     radial-gradient(circle at 10px 15px, #272e5d 12px, transparent 13px);
+  border: none
 }
 
 .offereings::before {
@@ -100,6 +105,7 @@ code {
   background-size: 20px 20px;
   background-image:
     radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
+  border: none
 }
 
 .offerings-bg::after {
@@ -113,4 +119,5 @@ code {
   background-size: 40px 20px;
   background-image:
     radial-gradient(circle at 10px 15px, #ffff 12px, transparent 13px);
+  border: none
 }

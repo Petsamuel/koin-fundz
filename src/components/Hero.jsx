@@ -5,7 +5,7 @@ export const Hero = () => (
       <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white header-hero-h1">
           Let us help fundraise for that project at{" "}
-          <span class="hidden lg:inline-block text-5xl text-upper text-mainOn font-extrabold" >
+          <span class=" lg:inline-block text-5xl text-upper text-mainOn font-extrabold" >
             KoinFunds
           </span >
         </h1>
