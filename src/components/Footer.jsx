@@ -25,77 +25,77 @@ export const Footer = () => {
         <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
           <div class="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              QUICL LINK
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Home</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a class="text-gray-600 hover:text-gray-800">About</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Services</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a class="text-gray-600 hover:text-gray-800">FAQ</a>
               </li>
             </nav>
           </div>
           <div class="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              REWARDS
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Started</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Invite</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Share Project</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Community</a>
               </li>
             </nav>
           </div>
           <div class="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              PROJECT
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Create Project</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Featured Projects</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Discover Projects</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a class="text-gray-600 hover:text-gray-800">All project</a>
               </li>
             </nav>
           </div>
           <div class="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              FAQ
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                <a class="text-gray-600 hover:text-gray-800">What's Crowdfunding?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a class="text-gray-600 hover:text-gray-800">What's Project?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Collect my Wallet?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <a class="text-gray-600 hover:text-gray-800">Fund a Project?</a>
               </li>
             </nav>
           </div>
