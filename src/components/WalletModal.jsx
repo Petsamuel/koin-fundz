@@ -19,7 +19,7 @@ export const WalletModal = () => {
         <div className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen">
             <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
-            <div className="relative bg-white w-1/4  rounded-lg shadow-lg p-4">
+            <div className="relative bg-white sm:3/4 md:w-1/4  rounded-lg shadow-lg p-4">
               <div className="flex justify-between items-center mb-2">
                 <h3 className="text-lg font-semibold my-0 mx-auto">
                   Connect Wallet
@@ -34,7 +34,7 @@ export const WalletModal = () => {
               <div className="p-2">
                 <ul className="flex flex-col items-center">
                   <li
-                    className="flex items-center justify-center border-gray-300 border-2 rounded-lg my-2 cursor-pointer hover:bg-gray-300 p-1 w-2/3"
+                    className="flex items-center justify-center border-gray-300 border-2 rounded-lg my-2 cursor-pointer hover:bg-gray-300 p-1 w-full"
                     onClick={connectWallet}
                   >
                     <img
@@ -44,7 +44,7 @@ export const WalletModal = () => {
                     />
                     <span className="ml-2 text-lg font-medium">Metamask</span>
                   </li>
-                  <li className="flex items-center justify-center  rounded my-2 cursor-pointer hover:bg-gray-300">
+                  <li className="flex items-center justify-center  rounded my-2 cursor-pointer">
                     <ConnectWalletButton />
                   </li>
                 </ul>
