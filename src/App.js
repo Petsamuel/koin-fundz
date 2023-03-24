@@ -2,7 +2,6 @@ import { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { Home } from "./pages/Home";
-import { isWalletConnected } from "./services/blockchain";
 import {
   EthereumClient,
   w3mConnectors,
@@ -48,8 +47,6 @@ function App() {
           setGlobalState("connectedAccount", "");
         }
       });
-
-      await isWalletConnected();
     };
     loadBlockchain();
   }, []);

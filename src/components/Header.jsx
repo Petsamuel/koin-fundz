@@ -1,14 +1,15 @@
-import { useGlobalState, setGlobalState } from "../store";
-import { truncate } from "../helper/truncate";
+import { useEffect } from "react";
+import { useGlobalState } from "../store";
+import { Web3Button } from "@web3modal/react";
 
-export const Header = () => {
+const ConnectWalletButton = () => {
   const [connectedAccount] = useGlobalState("connectedAccount");
 
-  const handleOpenWalletModal = () => {
-    if (connectedAccount) return;
-    else setGlobalState("isWalletModalOpen", true);
-  };
+  useEffect(() => {}, [connectedAccount]);
+  return <Web3Button />;
+};
 
+export const Header = () => {
   return (
     <header class="text-gray-600 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -33,13 +34,8 @@ export const Header = () => {
           <a class="mr-5 hover:text-gray-900">Third Link</a>
           <a class="mr-5 hover:text-gray-900">Fourth Link</a>
         </nav>
-        <button
-          class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-          onClick={handleOpenWalletModal}
-        >
-          {connectedAccount
-            ? truncate(connectedAccount, 4, 4, 11)
-            : "Connect Wallet"}
+        <button class="inline-flex items-center  border-0 py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
+          <ConnectWalletButton />
         </button>
       </div>
     </header>
