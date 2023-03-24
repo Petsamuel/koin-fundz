@@ -13,7 +13,7 @@ export const Hero = () => (
           Our platform connects you with a community of passionate supporters who believe in your vision. Whether you're starting a new business, launching a creative project, or making a difference in your community, we provide the tools and resources you need to succeed.
         </p>
         <div className="flex justify-center">
-          <button className="inline-flex text-white bg-mainOn border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Get Started
           </button>
           <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">

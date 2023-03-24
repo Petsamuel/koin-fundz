@@ -24,7 +24,8 @@ code {
 }
 
 .hero-section,
-.statistics-bg {
+.statistics-bg,
+.offerings-bg {
   /* background-image: linear-gradient(to bottom, #1c3648, #174861); */
   background-image: linear-gradient(to right, #1f2658, #272e5d);
   height: fit-content;
@@ -79,11 +80,37 @@ code {
   content: "";
   position: absolute;
   left: 0;
-  top: -8px;
+  top: 0px;
   right: 0;
   background-repeat: repeat;
   height: 15px;
   background-size: 40px 20px;
   background-image:
     radial-gradient(circle at 10px 15px, #272e5d 12px, transparent 13px);
+}
+
+.offereings::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image:
+    radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
+}
+
+.offerings-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 15px;
+  background-size: 40px 20px;
+  background-image:
+    radial-gradient(circle at 10px 15px, #ffff 12px, transparent 13px);
 }

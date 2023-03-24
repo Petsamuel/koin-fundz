@@ -2,7 +2,6 @@ import { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { Home } from "./pages/Home";
-import { isWalletConnected } from "./services/blockchain";
 import {
   EthereumClient,
   w3mConnectors,
@@ -12,6 +11,7 @@ import { useWeb3ModalTheme, Web3Modal } from "@web3modal/react";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { goerli } from "wagmi/chains";
 import { setGlobalState } from "./store";
+import { CreateProject } from "./pages/CreateProject";
 
 const chains = [goerli];
 const projectId = "749eb5afed3979cc3bc2175c60384ff5";
@@ -48,8 +48,6 @@ function App() {
           setGlobalState("connectedAccount", "");
         }
       });
-
-      await isWalletConnected();
     };
     loadBlockchain();
   }, []);
@@ -62,6 +60,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/create-project" element={<CreateProject />} />
             </Routes>
           </Layout>
         </Router>
