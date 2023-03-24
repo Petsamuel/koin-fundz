@@ -2393,6 +2393,11 @@
     table "^6.8.0"
     undici "^5.14.0"
 
+"@nomiclabs/hardhat-waffle@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@nomiclabs/hardhat-waffle/-/hardhat-waffle-2.0.5.tgz#97c217f1db795395c04404291937edb528f3f218"
+  integrity sha512-U1RH9OQ1mWYQfb+moX5aTgGjpVVlOcpiFI47wwnaGG4kLhcTy90cNiapoqZenxcRAITVbr0/+QSduINL5EsUIQ==
+
 "@pedrouid/environment@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
@@ -7765,6 +7770,11 @@ hardhat-gas-reporter@^1.0.8:
     array-uniq "1.0.3"
     eth-gas-reporter "^0.2.25"
     sha1 "^1.1.1"
+
+hardhat-waffle@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/hardhat-waffle/-/hardhat-waffle-0.0.1-security.tgz#f1c6d19746ff625fd116b13a59112eeaf1eaad27"
+  integrity sha512-r/rQUfoXmWm2fHUB3lQ3nXeazX0ZPLMOfz3dlX3NdA3pd4MIpDWKmOCL9OOLi5h9ws9gzBs7SleGiEnQVO547A==
 
 hardhat@^2.13.0:
   version "2.13.0"

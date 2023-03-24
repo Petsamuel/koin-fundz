@@ -6,9 +6,7 @@ export const Features = () => (
           What We Offer
         </h1>
         <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-          pug.
+          At KoinFunds we believes in decentralized fundraising for SMEs using blockchain and smart contracts for secure, transparent, and efficient fundraising without intermediaries. Our services Includes:
         </p>
       </div>
       <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
