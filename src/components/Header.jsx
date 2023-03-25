@@ -13,7 +13,7 @@ const ConnectWalletButton = () => {
 
 export const Header = () => {
   return (
-    <Disclosure as="nav" className="bg-[#181f41] fixed z-10 w-screen">
+    <Disclosure as="nav" className="bg-[#272e5d] fixed z-40 w-screen">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
