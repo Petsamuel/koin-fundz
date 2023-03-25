@@ -32,6 +32,10 @@ function App() {
     themeColor: "blue",
     themeMode: "light",
     themeBackground: "themeColor",
+    themeVariables: {
+      "--w3m-accent-color": "#4f46e5",
+      "--w3m-text-medium-regular-size": "1em",
+    },
   });
 
   useEffect(() => {
