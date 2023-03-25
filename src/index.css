@@ -23,6 +23,10 @@ code {
 
 }
 
+button {
+  background-color: #6366f1;
+}
+
 .hero-section,
 .statistics-bg,
 .offerings-bg {
