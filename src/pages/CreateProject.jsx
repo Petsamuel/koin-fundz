@@ -3,13 +3,13 @@ import { useState } from "react"
 
 export const CreateProject = () => {
   const [menu, setMenu] = useState(false);
-  const [activeMenu, setactiveMenu] = useState(false);
+  const [activeMenu, setactiveMenu] = useState(true);
 
   const ProjectMenu = () => {
     return (
       <div className="flex gap-x-12">
-        <div className={activeMenu ? "text-black border-b-0 border-blueon cursor-pointer" : "text-black border-b-4 border-blueon cursor-pointer pb-2"} onClick={() => !activeMenu}>Custom Project</div>
-        <div className={activeMenu ? "text-black border-b-4 border-blueon cursor-pointer pb-2 " : "text-black"} onClick={() => !activeMenu}>Project from a Template </div>
+        <div className={activeMenu ? "text-black border-b-0 rounded-sm border-blueon cursor-pointer" : "text-black border-b-4 border-blueon cursor-pointer pb-2 hover:border-b-0"} onClick={() => !activeMenu}>Custom Project</div>
+        <div className={activeMenu ? "text-black border-b-4 rounded-sm border-blueon cursor-pointer pb-2 cursor-pointer" : "cursor-pointer border-blueon text-bla hover:border-b-0"} onClick={() => !activeMenu}> Template </div>
       </div>
     )
   }
@@ -55,12 +55,6 @@ export const CreateProject = () => {
             // className="w-md"
 
             />
-            {/* <div className="w-full flex justify-center items-center p-4 bg-indigo-500 h-[120px] rounded-[10px]">
-              <h4 className="font-bold text-[25px] text-white">
-                You will get 97% of the raised amount, 3% goes to upkeep of the
-                webapp
-              </h4>
-            </div> */}
 
             <div className="flex flex-col w-6/12 gap-5">
               <FormField
@@ -79,16 +73,19 @@ export const CreateProject = () => {
               />
             </div>
             <div className="flex justify-end items-end mt-[40px] gap-5">
-              <button className="flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ">
+              <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                 Submit
               </button>
-              <button className="flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ">
+              <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-red-300 rounded text-lg">
                 Cancel
               </button>
 
             </div>
           </form>
-          <div></div>
+          <div>
+            {/* section- 2 */}
+
+          </div>
         </div>
       </div>
     </div>

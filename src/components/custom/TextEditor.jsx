@@ -19,6 +19,8 @@ export const TextEditor = () => {
         let html = convertToHTML(editorState.getCurrentContent());
         setConvertedContent(html);
     }, [editorState]);
+    
+    console.log(convertedContent);
     return (
         <React.Fragment>
 

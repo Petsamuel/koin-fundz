@@ -15,15 +15,7 @@ export const FormField = ({
         </span>
       )}
       {isTextArea ? (
-        // <textarea
-        //   required
-          // value={value}
-          // onChange={handleChange}
-          // rows={10}
-          // placeholder={placeholder}
-        //   className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-100 bg-text-[14px] rounded-[10px] sm:min-w-[300px]"
-        // />
-        <TextEditor className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-100 bg-text-[14px] rounded-[10px] sm:min-w-[300px]" />
+        <TextEditor />
 
       ) : (
         <input
