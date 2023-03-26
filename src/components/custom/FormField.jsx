@@ -1,3 +1,4 @@
+import { TextEditor } from './TextEditor'
 export const FormField = ({
   labelName,
   placeholder,
@@ -14,14 +15,16 @@ export const FormField = ({
         </span>
       )}
       {isTextArea ? (
-        <textarea
-          required
-          value={value}
-          onChange={handleChange}
-          rows={10}
-          placeholder={placeholder}
-          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-100 bg-text-[14px] rounded-[10px] sm:min-w-[300px]"
-        />
+        // <textarea
+        //   required
+          // value={value}
+          // onChange={handleChange}
+          // rows={10}
+          // placeholder={placeholder}
+        //   className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-100 bg-text-[14px] rounded-[10px] sm:min-w-[300px]"
+        // />
+        <TextEditor className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-100 bg-text-[14px] rounded-[10px] sm:min-w-[300px]" />
+
       ) : (
         <input
           required
@@ -30,7 +33,7 @@ export const FormField = ({
           type={inputType}
           step="0.1"
           placeholder={placeholder}
-          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-100 bg-text-[14px] rounded-[10px] sm:min-w-[300px]"
+          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px] sm:min-w-[300px]"
         />
       )}
     </label>
