@@ -48,7 +48,7 @@ export const CreateProject = () => {
 
               />
 
-              <div className="lg:flex gap-[40px] ">
+              <div className="lg:flex gap-[40px]">
                 <FormField
                   labelName="Fundraising Goal *"
                   placeholder="ETH 0.50"
