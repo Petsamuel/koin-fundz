@@ -29,16 +29,16 @@ export const Footer = () => {
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Home</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Home</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">About</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">About</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Services</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Services</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">FAQ</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">FAQ</a>
               </li>
             </nav>
           </div>
@@ -48,16 +48,16 @@ export const Footer = () => {
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Get Started</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Get Started</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Promo</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Promo</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Share Project</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Share Project</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Community</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Community</a>
               </li>
             </nav>
           </div>
@@ -67,16 +67,16 @@ export const Footer = () => {
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Create Project</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="/create-project">Create Project</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Featured Projects</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="/create-project">Featured Projects</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Discover Projects</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Discover Projects</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">All projects</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">All projects</a>
               </li>
             </nav>
           </div>
@@ -86,16 +86,16 @@ export const Footer = () => {
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a class="text-gray-600 hover:text-gray-800">What's Crowdfunding?</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">What's Crowdfunding?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">What's Project?</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">What's Project?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Collect my Wallet?</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Collect my Wallet?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Fund a Project?</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Fund a Project?</a>
               </li>
             </nav>
           </div>

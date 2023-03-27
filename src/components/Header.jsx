@@ -45,26 +45,26 @@ export const Header = () => {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     <a
-                      href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      href="/"
+                      className="text-gray-300 hover:bg-blueon hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       Home
                     </a>
                     <a
                       href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-gray-300 hover:bg-blueon hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       About Us
                     </a>
                     <a
                       href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-gray-300 hover:bg-blueon hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       Services
                     </a>
                     <a
                       href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-gray-300 hover:bg-blueon hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       FAQ
                     </a>
@@ -88,28 +88,28 @@ export const Header = () => {
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 Home
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 About Us
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 Services
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 Faq
               </Disclosure.Button>
