@@ -82,7 +82,7 @@ export const CreateProject = () => {
   return (
     <div className="bg-gray-200 flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {/* {isLoading && Loader...} */}
-      <div className="shadow-md  mx-4 py-8 px-10 bg-white rounded-md my-24 p-[16px]  ">
+      <div className="shadow-md  mx-4 py-8 px-10 bg-white rounded-md my-24 p-[16px] lg:w-11/12">
         <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2 border-gray-200 ">
           <div className="pb-4 text-lg ">
             New Project
