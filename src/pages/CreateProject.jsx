@@ -25,7 +25,7 @@ export const CreateProject = () => {
             inputType="text"
             // value={form.name}
             handleChange={() => { }}
-            className="w-40"
+          // className="w-40"
           />
           <FormField
             labelName="Email *"
@@ -33,7 +33,7 @@ export const CreateProject = () => {
             inputType="email"
             // value={form.title}
             handleChange={() => { }}
-            className="w-40 "
+          // className="w-40 "
 
           />
         </div>
@@ -44,7 +44,7 @@ export const CreateProject = () => {
             inputType="text"
             // value={form.name}
             handleChange={() => { }}
-            className="w-40"
+          // className="w-40"
           />
           <FormField
             labelName="Country *"
@@ -52,7 +52,7 @@ export const CreateProject = () => {
             inputType="text"
             // value={form.title}
             handleChange={() => { }}
-            className="w-40 "
+          // className="w-40 "
 
           />
         </div>
@@ -63,7 +63,7 @@ export const CreateProject = () => {
             inputType="text"
             // value={form.name}
             handleChange={() => { }}
-            className="w-40"
+          // className="w-40"
           />
           <FormField
             labelName="Website (Optional)"
@@ -71,7 +71,7 @@ export const CreateProject = () => {
             inputType="url"
             // value={form.title}
             handleChange={() => { }}
-            className="w-40 "
+          // className="w-40 "
 
           />
         </div>
@@ -103,7 +103,7 @@ export const CreateProject = () => {
                     inputType="text"
                     // value={form.name}
                     handleChange={() => { }}
-                    className="w-40"
+                  // className="w-40"
                   />
                   <FormField
                     labelName="Project Title *"
@@ -111,7 +111,7 @@ export const CreateProject = () => {
                     inputType="text"
                     // value={form.title}
                     handleChange={() => { }}
-                    className="w-40 "
+                  // className="w-40 "
 
                   />
                 </div>
