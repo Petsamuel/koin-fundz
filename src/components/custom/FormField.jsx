@@ -1,4 +1,28 @@
 // import { TextEditor } from './TextEditor'
+export const SelectField = ({
+  value,
+  labelName,
+  optionList,
+  handleChange,
+
+
+}) => {
+  return (
+    <label className="flex-1 w-full flex flex-col">
+      {labelName &&
+        <>
+          <select onChange={handleChange} value={value} className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px] cursor-pointer">
+            {optionList.map((index, key) => (
+              <option value={index} key={key}>{index}</option>
+            ))}
+
+          </select>
+        </>
+
+      }
+    </label>
+  )
+}
 export const FormField = ({
   labelName,
   placeholder,
@@ -33,7 +57,7 @@ export const FormField = ({
           type={inputType}
           step="0.1"
           placeholder={placeholder}
-          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px] sm:min-w-[300px]"
+          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px]"
         />
       )}
     </label>

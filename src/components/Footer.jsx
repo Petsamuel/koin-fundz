@@ -89,10 +89,10 @@ export const Footer = () => {
                 <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">What's Crowdfunding?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">What's Project?</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Start a Project?</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Collect my Wallet?</a>
+                <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Connecting to Wallet?</a>
               </li>
               <li>
                 <a class="text-gray-600 hover:text-gray-800 cursor-pointer " href="">Fund a Project?</a>
