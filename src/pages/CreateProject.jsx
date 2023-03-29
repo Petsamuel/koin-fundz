@@ -1,193 +1,116 @@
-import { FormField, SelectField } from "../components/custom/FormField";
-import { useState } from 'react'
-
+import { useState } from "react";
+import { CompanyDetails } from "../components/CompanyDetailsForm";
+import { ProjectDetail } from "../components/ProjectDetailsForm";
+import { useGlobalState } from "../store";
 
 export const CreateProject = () => {
   const [companyDetail, setCompanyDetail] = useState(false);
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
+  const [projectData, setProjectData] = useGlobalState("projectData");
+  // const [projectData, setProjectData] = useState({
+  //   name: "",
+  //   title: "",
+  //   description: "",
+  //   goal: "",
+  //   expiresAt: "",
+  //   organizationType: "Profit",
+  //   companyName: "",
+  //   email: "",
+  //   address: "",
+  //   country: "",
+  //   state: "",
+  //   website: "",
+  // });
 
-  const options = ["Profit", "Charity", "Startup", "Non-Profit"]
-  const milestone = ["Fill in Project Information", "Organization Information", "Start Project"]
-
+  const milestone = [
+    "Fill in Project Information",
+    "Organization Information",
+    "Start Project",
+  ];
 
   const Pipeline = () => {
-    return (<>
-      <div className="container">
-        <div className="flex">
-          {milestone.map((index, key) => (
-            <p className={active === key ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center" : "flex mr-8 px-4 bg-gray-100 items-center"} key={key}>{key}&nbsp;&nbsp;{index}</p>
-          ))}
-        </div>
-      </div>
-    </>)
-
-  }
-
-  const CompanyDetails = () => {
     return (
-      <div className="flex flex-wrap gap-[40px] flex-col">
-        <div className="lg:flex gap-[40px] lg:w-6/12">
-          <SelectField
-            labelName="Type of Organization *"
-            optionList={options}
-            inputType="select"
-            handleChange={() => { }} />
-
-        </div >
-
-        <div className="lg:flex gap-[40px] ">
-          <FormField
-            labelName="Company Name *"
-            placeholder="Koin Funds"
-            inputType="text"
-            // value={form.name}
-            handleChange={() => { }}
-            className=""
-          />
-          <FormField
-            labelName="Email *"
-            placeholder="Ayeolakenny@gmail.com"
-            inputType="email"
-            // value={form.title}
-            handleChange={() => { }}
-            className=" "
-
-          />
+      <>
+        <div className="container">
+          <div className="flex">
+            {milestone.map((index, key) => (
+              <p
+                className={
+                  active === key
+                    ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center"
+                    : "flex mr-8 px-4 bg-gray-100 items-center"
+                }
+                key={key}
+              >
+                {key}&nbsp;&nbsp;{index}
+              </p>
+            ))}
+          </div>
         </div>
-        <div className="lg:flex gap-[40px] ">
-          <FormField
-            labelName="State Address *"
-            placeholder="Koin Funds"
-            inputType="text"
-            // value={form.name}
-            handleChange={() => { }}
-            className=""
-          />
-          <FormField
-            labelName="Country *"
-            placeholder="Nigeria"
-            inputType="text"
-            // value={form.title}
-            handleChange={() => { }}
-            className=" "
-
-          />
-        </div>
-        <div className="lg:flex gap-[40px] ">
-          <FormField
-            labelName="State *"
-            placeholder="Lagos"
-            inputType="text"
-            // value={form.name}
-            handleChange={() => { }}
-            className=""
-          />
-          <FormField
-            labelName="Website (Optional)"
-            placeholder="https://"
-            inputType="url"
-            // value={form.title}
-            handleChange={() => { }}
-            className=" "
-
-          />
-        </div>
-      </div >
-    )
-  }
+      </>
+    );
+  };
 
   return (
     <div className="bg-gray-200 flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {/* {isLoading && Loader...} */}
       <div className="shadow-md  mx-4 py-8 px-10 bg-white rounded-md my-24 p-[16px] lg:w-11/12">
         <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2 border-gray-200 ">
-          <div className="pb-4 text-lg ">
-            New Project
-          </div>
-
+          <div className="pb-4 text-lg ">New Project</div>
         </div>
-        <div className="my-8 xs:hidden"><Pipeline /></div>
+        <div className="my-8 xs:hidden">
+          <Pipeline />
+        </div>
         <div className="flex gap-x-12 text-lg font-normal font-[Montserrat] my-8">
-
-
-          {!companyDetail ? <p classNam='leading-4'>Set up the basic of your fundraising campaign</p> :
-            <p classNam='leading-4'>Set up Organization Information</p>}
+          {!companyDetail ? (
+            <p classNam="leading-4">
+              Set up the basic of your fundraising campaign
+            </p>
+          ) : (
+            <p classNam="leading-4">Set up Organization Information</p>
+          )}
         </div>
 
         <form className="flex  flex-col mt-[65px gap-[30px]">
-          {!companyDetail ? <>
-            <div className="flex flex-wrap gap-[40px] flex-col">
-              <div className="lg:flex gap-[40px] ">
-                <FormField
-                  labelName="Name *"
-                  placeholder="John Doe"
-                  inputType="text"
-                  // value={form.name}
-                  handleChange={() => { }}
-                  className=""
-                />
-                <FormField
-                  labelName="Project Title *"
-                  placeholder="Robots to clean"
-                  inputType="text"
-                  // value={form.title}
-                  handleChange={() => { }}
-                  className=" "
-
-                />
-              </div>
-              <FormField
-                labelName="Story *"
-                placeholder="Write your story"
-                isTextArea
-                // value={form.description}
-                handleChange={() => { }}
-              // className="w-md"
-
-              />
-
-              <div className="lg:flex gap-[40px]">
-                <FormField
-                  labelName="Fundraising Goal *"
-                  placeholder="ETH 0.50"
-                  inputType="text"
-                  // value={form.target}
-                  handleChange={() => { }}
-                />
-                <FormField
-                  labelName="End Date *"
-                  placeholder="End Date"
-                  inputType="date"
-                  // value={form.deadline}
-                  handleChange={() => { }}
-                />
-              </div>
-
-              <div>
-
-              </div>
-
-            </div>
-          </> : <><CompanyDetails /></>}
+          {!companyDetail ? <ProjectDetail /> : <CompanyDetails />}
 
           <div className="flex justify-end items-end mt-[40px] gap-5">
-            {
-              !companyDetail ? <><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { setCompanyDetail(true); setActive(1) }}>
-                Proceed
-              </button></>
-                :
-                <><button className="inline-flex text-white bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { setCompanyDetail(false); setActive(0) }}>
+            {!companyDetail ? (
+              <>
+                <button
+                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  onClick={() => {
+                    setCompanyDetail(true);
+                    setActive(1);
+                  }}
+                >
+                  Proceed
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  className="inline-flex text-white bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  onClick={() => {
+                    setCompanyDetail(false);
+                    setActive(0);
+                  }}
+                >
                   Previous
                 </button>
-                  <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-blueon rounded text-lg" onClick={() => { }}>
-                    Submit
-                  </button></>
-            }
-
+                <button
+                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-blueon rounded text-lg"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log(projectData);
+                  }}
+                >
+                  Submit
+                </button>
+              </>
+            )}
           </div>
-
         </form>
-
       </div>
     </div>
   );

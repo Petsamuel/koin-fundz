@@ -1,27 +1,25 @@
-export const SelectField = ({
-  value,
-  labelName,
-  optionList,
-  handleChange,
-
-
-}) => {
+export const SelectField = ({ value, labelName, optionList, handleChange }) => {
   return (
     <label className="flex-1 flex flex-col ">
-      {labelName &&
+      {labelName && (
         <>
-          <select onChange={handleChange} value={value} className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px] cursor-pointer sm:w-5/6">
+          <select
+            onChange={handleChange}
+            value={value}
+            className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px] cursor-pointer sm:w-5/6"
+          >
             {optionList.map((index, key) => (
-              <option value={index} key={key}>{index}</option>
+              <option value={index} key={key}>
+                {index}
+              </option>
             ))}
-
           </select>
         </>
-
-      }
+      )}
     </label>
-  )
-}
+  );
+};
+
 export const FormField = ({
   labelName,
   placeholder,
@@ -46,8 +44,6 @@ export const FormField = ({
           placeholder={placeholder}
           className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[14px] rounded-[10px] sm:min-w-[300px]"
         />
-
-
       ) : (
         <input
           required

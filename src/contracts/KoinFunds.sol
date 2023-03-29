@@ -37,13 +37,21 @@ contract KoinFunds {
     struct projectStruct {
         uint id;
         address owner;
+        string name;
         string title;
         string description;
         string imageURL;
-        uint cost;
+        uint goal;
         uint raised;
         uint timestamp;
         uint expiresAt;
+        string organizationType;
+        string companyName;
+        string email;
+        string companyAddress;
+        string country;
+        string state;
+        string website;
         uint investors;
         statusEnum status;
     }
@@ -69,14 +77,31 @@ contract KoinFunds {
         string memory title,
         string memory description,
         string memory imageURL,
-        uint cost,
-        uint expiresAt
+        uint goal,
+        uint expiresAt,
+        string memory organizationType,
+        string memory companyName,
+        string memory email,
+        string memory companyAddress,
+        string memory country,
+        string memory website,
+        string memory state
     ) public returns (bool) {
         require(bytes(title).length > 0, "Title cannot be empty");
         require(bytes(description).length > 0, "Description cannot be empty");
         require(bytes(imageURL).length > 0, "Image url cannot be empty");
-        require(cost > 0 ether, "Cost cannot be 0 eth");
+        require(goal > 0 ether, "Cost cannot be 0 eth");
         // require(expiresAt > block.timestamp, "Timt too short");
+        require(
+            bytes(organizationType).length > 0,
+            "Organization type cannot be empty"
+        );
+        require(bytes(companyName).length > 0, "Company name cannot be empty");
+        require(bytes(email).length > 0, "Email cannot be empty");
+        require(bytes(companyAddress).length > 0, "Address cannot be empty");
+        require(bytes(country).length > 0, "Country cannot be empty");
+        require(bytes(state).length > 0, "State cannot be empty");
+        require(bytes(website).length > 0, "Website cannot be empty");
 
         projectStruct memory project;
         project.id = projectCount;
@@ -84,9 +109,16 @@ contract KoinFunds {
         project.title = title;
         project.description = description;
         project.imageURL = imageURL;
-        project.cost = cost;
+        project.goal = goal;
         project.timestamp = block.timestamp;
         project.expiresAt = expiresAt;
+        project.organizationType = organizationType;
+        project.companyName = companyName;
+        project.email = email;
+        project.companyAddress = companyAddress;
+        project.country = country;
+        project.state = state;
+        project.website = website;
 
         projects.push(project);
         projectExist[projectCount] = true;
@@ -166,7 +198,7 @@ contract KoinFunds {
 
         emit Action(id, "INVESTMENT MADE", msg.sender, block.timestamp);
 
-        if (projects[id].raised >= projects[id].cost) {
+        if (projects[id].raised >= projects[id].goal) {
             projects[id].status = statusEnum.APPROVED;
             balance += projects[id].raised;
             performPayout(id);
