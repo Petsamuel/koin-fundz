@@ -29,27 +29,17 @@ export const CreateProject = () => {
   ];
 
   const Pipeline = () => {
-    return (
-      <>
-        <div className="container">
-          <div className="flex">
-            {milestone.map((index, key) => (
-              <p
-                className={
-                  active === key
-                    ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center"
-                    : "flex mr-8 px-4 bg-gray-100 items-center"
-                }
-                key={key}
-              >
-                {key}&nbsp;&nbsp;{index}
-              </p>
-            ))}
-          </div>
+    return (<>
+      <div className="container">
+        <div className="flex text-sm">
+          {milestone.map((index, key) => (
+            <p className={active === key ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center " : "flex mr-8 px-4 bg-gray-100 items-center justify-items-center"} key={key}>{key}&nbsp;&nbsp;{index}</p>
+          ))}
         </div>
-      </>
-    );
-  };
+      </div>
+    </>)
+  }
+
 
   return (
     <div className="bg-gray-200 flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
@@ -78,7 +68,7 @@ export const CreateProject = () => {
             {!companyDetail ? (
               <>
                 <button
-                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  className="inline-flex text-white bg-blueon border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   onClick={() => {
                     setCompanyDetail(true);
                     setActive(1);
@@ -99,7 +89,7 @@ export const CreateProject = () => {
                   Previous
                 </button>
                 <button
-                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-blueon rounded text-lg"
+                  className="inline-flex text-white bg-blueon border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   onClick={(e) => {
                     e.preventDefault();
                     console.log(projectData);
