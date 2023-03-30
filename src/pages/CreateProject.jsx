@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export const CreateProject = () => {
   const [companyDetail, setCompanyDetail] = useState(false);
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(0);
 
   const options = ["Profit", "Charity", "Startup", "Non-Profit"]
   const milestone = ["Fill in Project Information", "Organization Information", "Start Project"]
@@ -13,9 +13,9 @@ export const CreateProject = () => {
   const Pipeline = () => {
     return (<>
       <div className="container">
-        <div className="flex">
+        <div className="flex text-sm">
           {milestone.map((index, key) => (
-            <p className={active === key ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center" : "flex mr-8 px-4 bg-gray-100 items-center"} key={key}>{key}&nbsp;&nbsp;{index}</p>
+            <p className={active === key ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center " : "flex mr-8 px-4 bg-gray-100 items-center justify-items-center"} key={key}>{key}&nbsp;&nbsp;{index}</p>
           ))}
         </div>
       </div>
@@ -172,14 +172,14 @@ export const CreateProject = () => {
 
           <div className="flex justify-end items-end mt-[40px] gap-5">
             {
-              !companyDetail ? <><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { setCompanyDetail(true); setActive(1) }}>
+              !companyDetail ? <><button className="inline-flex text-white bg-blueon border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { setCompanyDetail(true); setActive(1) }}>
                 Proceed
               </button></>
                 :
                 <><button className="inline-flex text-white bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { setCompanyDetail(false); setActive(0) }}>
                   Previous
                 </button>
-                  <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-blueon rounded text-lg" onClick={() => { }}>
+                  <button className="inline-flex text-white bg-blueon border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={() => { }}>
                     Submit
                   </button></>
             }
