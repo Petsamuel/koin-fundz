@@ -1,7 +1,9 @@
+import { Fragment } from "react";
 import ProjectListing from "../components/ProjectListing"
 
-export const Listing = () =>{
-    <section>
-        <ProjectListing/>
-    </section>
+
+export const Listing = () => {
+    <Fragment >
+        <ProjectListing />
+    </Fragment>
 }
