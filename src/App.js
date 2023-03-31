@@ -2,6 +2,7 @@ import { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { Home } from "./pages/Home";
+import { Listing } from "./pages/Listing";
 import {
   EthereumClient,
   w3mConnectors,
@@ -65,6 +66,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/create-project" element={<CreateProject />} />
+              <Route path="/project-listing" element={<Listing />} />
             </Routes>
           </Layout>
         </Router>
