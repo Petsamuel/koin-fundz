@@ -94,7 +94,7 @@ export const Header = () => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 About Us
