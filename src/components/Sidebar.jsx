@@ -36,7 +36,7 @@ function Sidebar() {
                         {toggle ? <ul class=" py-2 space-y-2">
                             {categoryLists.map((index, key) => (
                                 <li key={key}>
-                                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-500 dark:hover:blueon">{index}</a>
+                                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blueon dark:text-gray-500 darhover:blueon">{index}</a>
                                 </li>
                             ))}
 

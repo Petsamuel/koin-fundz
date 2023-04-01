@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { Sidebar } from "./Sidebar";
 
-
 function ProjectListing() {
     const Content = () => {
         return (
