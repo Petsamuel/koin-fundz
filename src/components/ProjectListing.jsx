@@ -1,13 +1,12 @@
 import { Fragment } from "react";
 import { Sidebar } from "./Sidebar";
 
-
 function ProjectListing() {
     const Content = () => {
         return (
-            <div class="p-4 sm:ml-64 text-transparent ">
+            <div class="p-4 sm:ml-64 text-transparent py-4 overflow-y-auto">
 
-                <div class="p-4  border-gray-200 rounded-lg  mt-16">
+                <div class="p-4  border-gray-200 rounded-lg">
                     <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2  ">
                         <div className="pb-4 text-lg text-blueoff">All Projects</div>
                     </div>
