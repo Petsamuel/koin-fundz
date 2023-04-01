@@ -2,25 +2,62 @@ import { useState } from "react";
 import { CompanyDetails } from "../components/CompanyDetailsForm";
 import { ProjectDetail } from "../components/ProjectDetailsForm";
 import { useGlobalState } from "../store";
+import { createProject } from "../services/blockchain";
+import { toTimestamp } from "../helper/toTimestamp";
 
 export const CreateProject = () => {
   const [companyDetail, setCompanyDetail] = useState(false);
   const [active, setActive] = useState(0);
   const [projectData, setProjectData] = useGlobalState("projectData");
-  // const [projectData, setProjectData] = useState({
-  //   name: "",
-  //   title: "",
-  //   description: "",
-  //   goal: "",
-  //   expiresAt: "",
-  //   organizationType: "Profit",
-  //   companyName: "",
-  //   email: "",
-  //   address: "",
-  //   country: "",
-  //   state: "",
-  //   website: "",
-  // });
+  const {
+    address,
+    companyName,
+    country,
+    description,
+    email,
+    expiresAt,
+    goal,
+    organizationType,
+    state,
+    title,
+    imageUrl,
+    website,
+  } = projectData;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (
+      !address ||
+      !companyName ||
+      !country ||
+      !description ||
+      !email ||
+      !expiresAt ||
+      !goal ||
+      !organizationType ||
+      !state ||
+      !title ||
+      !imageUrl
+    ) {
+      alert("Kindly fill all details");
+    }
+
+    await createProject({
+      title,
+      description,
+      imageUrl,
+      goal,
+      expiresAt: toTimestamp(expiresAt),
+      organizationType,
+      companyName,
+      email,
+      address,
+      country,
+      website,
+      state,
+    });
+    alert("Project Created");
+  };
 
   const milestone = [
     "Fill in Project Information",
@@ -29,17 +66,27 @@ export const CreateProject = () => {
   ];
 
   const Pipeline = () => {
-    return (<>
-      <div className="container">
-        <div className="flex text-sm">
-          {milestone.map((index, key) => (
-            <p className={active === key ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center " : "flex mr-8 px-4 bg-gray-100 items-center justify-items-center"} key={key}>{key}&nbsp;&nbsp;{index}</p>
-          ))}
+    return (
+      <>
+        <div className="container">
+          <div className="flex text-sm">
+            {milestone.map((index, key) => (
+              <p
+                className={
+                  active === key
+                    ? "flex text-blueon border-2 border-blueon rounded-sm py-4 mr-8 px-4 items-center "
+                    : "flex mr-8 px-4 bg-gray-100 items-center justify-items-center"
+                }
+                key={key}
+              >
+                {key}&nbsp;&nbsp;{index}
+              </p>
+            ))}
+          </div>
         </div>
-      </div>
-    </>)
-  }
-
+      </>
+    );
+  };
 
   return (
     <div className="bg-gray-200 flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
@@ -90,10 +137,7 @@ export const CreateProject = () => {
                 </button>
                 <button
                   className="inline-flex text-white bg-blueon border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log(projectData);
-                  }}
+                  onClick={(e) => handleSubmit(e)}
                 >
                   Submit
                 </button>

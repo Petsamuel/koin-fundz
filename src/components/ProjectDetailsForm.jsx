@@ -6,6 +6,26 @@ export const ProjectDetail = () => {
 
   return (
     <div className="flex flex-wrap gap-[40px] flex-col">
+      <img
+        src={
+          projectData.imageUrl
+            ? projectData.imageUrl
+            : "https://waterfieldtech.com/wp-content/uploads/2019/02/placeholder-image-gray-3x2.png"
+        }
+        alt="project-image"
+        className="h-full w-full object-cover cursor-pointer"
+      />
+      <div className="lg:flex gap-[40px] ">
+        <FormField
+          labelName="Image Url*"
+          placeholder="paste image url here"
+          inputType="text"
+          value={projectData.imageUrl}
+          handleChange={(e) => {
+            setProjectData({ ...projectData, imageUrl: e.target.value });
+          }}
+        />
+      </div>
       <div className="lg:flex gap-[40px] ">
         <FormField
           labelName="Project Title *"
