@@ -14,6 +14,7 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
     country: "",
     state: "",
     website: "",
+    imageUrl: "",
   },
 });
 
