@@ -5,7 +5,7 @@ import { ProjectListing } from "../components/ProjectListing";
 
 export const Listing = () => {
     return (
-        <Fragment >
+        <Fragment>
             <ProjectListing />
         </Fragment>
     )
