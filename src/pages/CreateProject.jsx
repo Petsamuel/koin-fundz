@@ -53,11 +53,11 @@ export const CreateProject = () => {
         </div>
         <div className="flex gap-x-12 text-lg font-normal font-[Montserrat] my-8">
           {!companyDetail ? (
-            <p classNam="leading-4">
+            <p className="leading-4">
               Set up the basic of your fundraising campaign
             </p>
           ) : (
-            <p classNam="leading-4">Set up Organization Information</p>
+            <p className="leading-4">Set up Organization Information</p>
           )}
         </div>
 

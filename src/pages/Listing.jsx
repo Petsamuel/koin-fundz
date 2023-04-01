@@ -1,9 +1,12 @@
 import { Fragment } from "react";
-import ProjectListing from "../components/ProjectListing"
+import { ProjectListing } from "../components/ProjectListing";
+
 
 
 export const Listing = () => {
-    <Fragment >
-        <ProjectListing />
-    </Fragment>
+    return (
+        <Fragment >
+            <ProjectListing />
+        </Fragment>
+    )
 }
