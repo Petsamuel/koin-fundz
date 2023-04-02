@@ -68,6 +68,10 @@ export const ProjectDetail = () => {
           name="file-upload"
           placeholder="https://www..."
           inputType="Url"
+          value={projectData.imageUrl}
+          handleChange={(e) => {
+            setProjectData({ ...projectData, imageUrl: e.target.value });
+          }}
 
         />
       </div>
