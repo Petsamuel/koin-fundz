@@ -4,6 +4,7 @@ import { ProjectDetail } from "../components/ProjectDetailsForm";
 import { useGlobalState } from "../store";
 import { createProject } from "../services/blockchain";
 import { toTimestamp } from "../helper/toTimestamp";
+import { FailedMessage, SuccessMessage } from "../components/Alert";
 
 export const CreateProject = () => {
   const [companyDetail, setCompanyDetail] = useState(false);
