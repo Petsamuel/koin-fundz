@@ -51,7 +51,7 @@ export const Header = () => {
                       Home
                     </a>
                     <a
-                      href="#"
+                      href="/about"
                       className="text-gray-300 hover:bg-blueon hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       About Us
@@ -94,14 +94,14 @@ export const Header = () => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/"
+                href="/about"
                 className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 About Us
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/"
+                href="/about"
                 className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 Services

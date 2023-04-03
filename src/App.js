@@ -2,6 +2,8 @@ import { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+
 import { Listing } from "./pages/Listing";
 import {
   EthereumClient,
@@ -65,6 +67,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/About" element={<About />} />
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/project-listing" element={<Listing />} />
             </Routes>

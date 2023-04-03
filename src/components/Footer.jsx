@@ -39,7 +39,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/about"
                 >
                   About
                 </a>
