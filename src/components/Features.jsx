@@ -3,13 +3,13 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 function Features() {
-  const control = useAnimation()
-  const [ref, inView] = useInView()
+  const control = useAnimation();
+  const [ref, inView] = useInView();
 
   const variants = {
     visible: { opacity: 2, scale: 1 },
     hidden: { opacity: 0, scale: 0 },
-  }
+  };
 
   useEffect(() => {
     if (inView) {
@@ -20,16 +20,22 @@ function Features() {
   }, [control, inView]);
 
   return (
-    <section className="text-gray-600 body-font" >
+    <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
-        <motion.div className="text-center mb-20" variants={variants} animate={control} ref={ref} initial={{ opacity: 0, transition: { duration: 1 } }}>
+        <motion.div
+          className="text-center mb-20"
+          variants={variants}
+          animate={control}
+          ref={ref}
+          initial={{ opacity: 0, transition: { duration: 1 } }}
+        >
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4 text-bold ">
             What We Offer
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
             At KoinFunds we believes in decentralized fundraising for SMEs using
-            blockchain and smart contracts for secure, transparent, and efficient
-            fundraising without intermediaries. Our services Includes:
+            blockchain and smart contracts for secure, transparent, and
+            efficient fundraising without intermediaries. Our services Includes:
           </p>
         </motion.div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
@@ -136,10 +142,11 @@ function Features() {
             </div>
           </div>
         </div>
-        <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        <button className="flex mx-auto mt-16 text-white bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-8 focus:outline-none hover:bg-gray-100 hover:shadow-xl rounded text-lg">
           Get Started
         </button>
       </div>
-    </section>)
+    </section>
+  );
 }
 export { Features };
