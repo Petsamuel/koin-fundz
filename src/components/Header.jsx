@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const ConnectWalletButton = () => {
   const [connectedAccount] = useGlobalState("connectedAccount");
 
-  useEffect(() => { }, [connectedAccount]);
+  useEffect(() => {}, [connectedAccount]);
   return <Web3Button />;
 };
 
@@ -87,7 +87,7 @@ export const Header = () => {
             <div className="space-y-1 px-2 pt-2 pb-3">
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 Home
@@ -101,7 +101,7 @@ export const Header = () => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="text-gray-300 hover:bg-blueon hover:text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 Services
