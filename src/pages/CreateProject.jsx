@@ -78,7 +78,6 @@ export const CreateProject = () => {
       }, 4000);
     }
 
-    // Cleanup function to cancel the timeout if the component unmounts before it completes
     return () => {
       if (timeout) {
         clearTimeout(timeout);
@@ -89,7 +88,7 @@ export const CreateProject = () => {
   return (
     <div className="bg-gray-200 flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4 ">
       {/* {isLoading && Loader...} */}
-      <div className={projectStatus === null ? "hidden mt-3" : "block mt-3"}>
+      <div className={projectStatus === null ? "hidden mt-2" : "block mt-2"}>
         <AlertMessage projectStatus={projectStatus} />
       </div>
       <div className="shadow-md  mx-4 py-8 px-10 bg-white rounded-md my-24 p-[16px] lg:w-11/12">
