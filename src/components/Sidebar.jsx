@@ -4,7 +4,7 @@ import { categoryLists } from "../store/listdata";
 function Sidebar() {
   const [isConnected, setIsConnected] = useState(false);
   const [toggle, setToggle] = useState(true);
-  const [mobileToggle, setMobileToggle] = useState(false);
+  const [mobileToggle, setMobileToggle] = useState(true);
 
   return (
     <>
@@ -13,7 +13,7 @@ function Sidebar() {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        class="inline-flex items-center p-2 mt-20 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 z-30 relative"
+        class="inline-flex items-center py-4 p-1 mt-16 md:hidden ml-3 text-sm text-gray-500 rounded-lg  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 z-30 absolute"
         onClick={() => setMobileToggle(!mobileToggle)}
       >
         <span class="sr-only">Open sidebar</span>
@@ -35,9 +35,9 @@ function Sidebar() {
       {mobileToggle ? (
         <aside
           id="default-sidebar"
-          class="fixed top-0 left-0 z-30 w-64 h-screen transition-transform translate-x-0 sm:translate-x-0 mt-10"
+          class="top-0 left-0 z-20 w-64 h-screen transition-transform translate-x-0 sm:translate-x-0 py-8 absolute shadow-md bg-white"
         >
-          <div class="h-full px-3 py-16 overflow-y-auto bg-gray-50 dark:bg-white shadow-lg">
+          <div class="h-screen px-3 py-14">
             <ul class="space-y-2 font-medium mt-10">
               <li>
                 <a
