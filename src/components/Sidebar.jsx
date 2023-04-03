@@ -13,7 +13,7 @@ function Sidebar() {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        class="inline-flex items-center py-4 p-1 mt-16 md:hidden ml-3 text-sm text-gray-500 rounded-lg  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 z-30 absolute"
+        class="inline-flex items-center  p-2 mt-16 md:hidden ml-3 text-sm text-gray-500 rounded-lg  focus:outline-none focus:ring-2  dark:text-gray-400 z-30 absolute"
         onClick={() => setMobileToggle(!mobileToggle)}
       >
         <span class="sr-only">Open sidebar</span>
