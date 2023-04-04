@@ -13,9 +13,21 @@ function ProjectListing() {
               src="https://cdn.pixabay.com/photo/2016/11/14/05/29/children-1822704_960_720.jpg"
               alt=""
             />
-            <span class="absolute bg-gradient-to-r to-indigo-600 from-mainOn text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-white ml-3 z-auto top-2 right-0">
+            <span className="absolute bg-gradient-to-r to-indigo-600 from-mainOn text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-white ml-3 z-auto top-2 right-0">
               Charity
             </span>
+            <div
+              className="w-full bg-gray-200  dark:bg-gray-700 tooltip"
+              title={`${100 - 45}% left`}
+            >
+              <div
+                className="bg-purple-600 h-2.5  dark:bg-purple-500 text-white text-sm tooltip transition-opacity duration-300"
+                style={{ width: 45 + "%" }}
+                title={`45% Completed`}
+              >
+                <div class="tooltip-arrow"></div>
+              </div>
+            </div>
           </a>
           <div className="p-5">
             <a href="#">
@@ -28,25 +40,36 @@ function ProjectListing() {
               but unfortunately, millions of children around the world are
               unable to access them.
             </p>
-            <a
-              href={`/request/${id}`}
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Donate
-              <svg
-                aria-hidden="true"
-                className="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+
+            <div class="flex items-center justify-between">
+              <span
+                class="text-3xl font-bold bg-clip-text bg-gradient-to-r to-gray-900 from-mainOn truncate truncate-overflow transition-opacity duration-300 tooltip w-64 cursor-pointer"
+                title="Goal"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+                <div class="tooltip-arrow"></div>
+                599<span className="text-sm">eth</span>
+              </span>
+
+              <a
+                href={`/request/${id}`}
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Donate
+                <svg
+                  aria-hidden="true"
+                  className="w-4 h-4 ml-2 -mr-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
