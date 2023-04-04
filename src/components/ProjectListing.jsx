@@ -1,89 +1,98 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Sidebar } from "./Sidebar";
 import { useParams } from "react-router-dom";
+import { useGlobalState } from "../store";
+
 function ProjectListing() {
   const { id } = useParams();
+  const [projectData, setProjectData] = useGlobalState("projectData");
+  const [isLoading, setIsLoading] = useState(true);
+
   const Lists = () => {
     return (
       <div className="">
-        <div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-100 dark:border-gray-100">
-          <a href={`/request/${id}`}>
-            <img
-              className="rounded-t-lg"
-              src="https://cdn.pixabay.com/photo/2016/11/14/05/29/children-1822704_960_720.jpg"
-              alt=""
-            />
-            <span className="absolute bg-gradient-to-r to-indigo-600 from-mainOn text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-white ml-3 z-auto top-2 right-0">
-              Charity
-            </span>
-            <div
-              className="w-full bg-gray-200  dark:bg-gray-700 tooltip"
-              title={`${100 - 45}% left`}
-            >
-              <div
-                className="bg-purple-600 h-2.5  dark:bg-purple-500 text-white text-sm tooltip transition-opacity duration-300"
-                style={{ width: 45 + "%" }}
-                title={`45% Completed`}
-              >
-                <div class="tooltip-arrow"></div>
+        {isLoading ? (
+          <>
+            <div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-100 dark:border-gray-100">
+              <a href={`/request/${id}`} key={projectData.email}>
+                <img
+                  className="rounded-t-lg"
+                  src={
+                    !projectData.imageUrl === ""
+                      ? projectData.imageUrl
+                      : "https://cdn.pixabay.com/photo/2016/11/14/05/29/children-1822704_960_720.jpg"
+                  }
+                  alt=""
+                />
+                <span className="absolute bg-gradient-to-r to-indigo-600 from-mainOn text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-white ml-3 z-auto top-2 right-0">
+                  {!projectData.OrganizationType === ""
+                    ? projectData.OrganizationType
+                    : "Charity"}
+                </span>
+                <div
+                  className="w-full bg-gray-200  dark:bg-gray-700 tooltip"
+                  title={`${100 - 45}% left`}
+                >
+                  <div
+                    className="bg-purple-600 h-2.5  dark:bg-purple-500 text-white text-sm tooltip transition-opacity duration-300"
+                    style={{ width: 45 + "%" }}
+                    title={`45% Completed`}
+                  >
+                    <div class="tooltip-arrow"></div>
+                  </div>
+                </div>
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-blueon ">
+                    {!projectData.title === ""
+                      ? projectData.title
+                      : `Helping Underprivileged Children with Education and
+                      Nutrition`}
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  {!projectData.description === ""
+                    ? projectData.description
+                    : `Education and nutrition are two fundamental needs of every
+                    child, but unfortunately, millions of children around the
+                    world are unable to access them.`}
+                </p>
+
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-3xl font-bold bg-clip-text bg-gradient-to-r to-gray-900 from-mainOn truncate truncate-overflow transition-opacity duration-300 tooltip w-64 cursor-pointer"
+                    title="Goal"
+                  >
+                    <div class="tooltip-arrow"></div>
+                    599<span className="text-sm">eth</span>
+                  </span>
+
+                  <a
+                    href={`/request/${id}`}
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blueon dark:hover:bg-blueoff dark:focus:ring-blue-800"
+                  >
+                    Donate
+                    <svg
+                      aria-hidden="true"
+                      className="w-4 h-4 ml-2 -mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
-          </a>
-          <div className="p-5">
-            <a href="#">
-              <h5 className="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-blueon ">
-                Helping Underprivileged Children with Education and Nutrition
-              </h5>
-            </a>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Education and nutrition are two fundamental needs of every child,
-              but unfortunately, millions of children around the world are
-              unable to access them.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span
-                class="text-3xl font-bold bg-clip-text bg-gradient-to-r to-gray-900 from-mainOn truncate truncate-overflow transition-opacity duration-300 tooltip w-64 cursor-pointer"
-                title="Goal"
-              >
-                <div class="tooltip-arrow"></div>
-                599<span className="text-sm">eth</span>
-              </span>
-
-              <a
-                href={`/request/${id}`}
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Donate
-                <svg
-                  aria-hidden="true"
-                  className="w-4 h-4 ml-2 -mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const Content = () => {
-    return (
-      <div className="p-4 sm:ml-64 text-transparent py-20">
-        <div className="p-4  border-gray-200 rounded-lg  ">
-          <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2  ">
-            <div className="pb-4 text-lg text-blueoff">All Projects</div>
-          </div>
-          {false ? (
+          </>
+        ) : (
+          <>
             <div className="grid grid-cols-4 gap-4 mb-4 xs:cols-1 overflow-y-hidden p-2">
               <div
                 role="status"
@@ -111,9 +120,20 @@ function ProjectListing() {
                 <span className="sr-only">Loading...</span>
               </div>
             </div>
-          ) : (
-            <Lists />
-          )}
+          </>
+        )}
+      </div>
+    );
+  };
+
+  const Content = () => {
+    return (
+      <div className="p-4 sm:ml-64 text-transparent py-20">
+        <div className="p-4  border-gray-200 rounded-lg  ">
+          <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2  ">
+            <div className="pb-4 text-lg text-blueoff">All Projects</div>
+          </div>
+          <Lists />
         </div>
       </div>
     );
