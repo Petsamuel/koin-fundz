@@ -37,7 +37,7 @@ function Sidebar() {
         class={
           mobileToggle
             ? "top-0 left-0 z-20 w-64 h-screen transition-transform translate-x-0 sm:translate-x-0 py-8 absolute shadow-md bg-white"
-            : "hidden top-0 left-0 z-20 w-64 h-screen transition-transform translate-x-0 translate-x-0 py-8 lg:absolute shadow-md bg-white"
+            : "hidden"
         }
       >
         <div class="h-screen px-3 py-14">
