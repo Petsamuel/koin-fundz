@@ -27,7 +27,7 @@ export const Header = () => {
       as="nav"
       className={
         updateNavbar
-          ? "bg-[#272e5d] fixed z-40 w-screen bg-opacity-45 bg-gradient-to-r from-[#1f2658] to-[#272e5d]"
+          ? "fixed z-40 w-screen bg-opacity-10 bg-gradient-to-r from-[#1f2658] to-[#272e5d] shadow-md"
           : "fixed z-40 w-screen"
       }
     >
