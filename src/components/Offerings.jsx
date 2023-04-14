@@ -19,7 +19,7 @@ function Offerings() {
   }, [control, inView]);
 
   return (
-    <section className="text-white body-font offerings-bg">
+    <section className="text-white body-font offerings-bg bg-gradient-to-r from-[#1f2658] to-[#272e5d]">
       <div className="container px-5 py-24 mx-auto">
         <motion.div
           className="text-center mb-20"

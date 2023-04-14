@@ -1,5 +1,5 @@
 export const Statistics = () => (
-  <section className="text-white body-font statistics-bg">
+  <section className="text-white body-font statistics-bg bg-gradient-to-r from-[#1f2658] to-[#272e5d]">
     <div className="container px-5 py-24 mx-auto">
       <div className="text-center mb-20">
         <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">
