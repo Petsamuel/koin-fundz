@@ -10,7 +10,7 @@ function ProjectListing() {
 
   const Lists = () => {
     return (
-      <div className="">
+      <div className="relative bg-gray-50">
         {isLoading ? (
           <>
             <div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-100 dark:border-gray-100">
@@ -128,7 +128,7 @@ function ProjectListing() {
 
   const Content = () => {
     return (
-      <div className="p-4 sm:ml-64 text-transparent py-20">
+      <div className="relativep-4 sm:ml-64 text-transparent py-20">
         <div className="p-4  border-gray-200 rounded-lg  ">
           <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2  ">
             <div className="pb-4 text-lg text-blueoff">All Projects</div>

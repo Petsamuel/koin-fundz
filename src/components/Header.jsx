@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useGlobalState } from "../store";
 import { Web3Button } from "@web3modal/react";
 import { Disclosure, Menu } from "@headlessui/react";
@@ -12,8 +12,25 @@ const ConnectWalletButton = () => {
 };
 
 export const Header = () => {
+  const [updateNavbar, setUpdateNavbar] = useState(false);
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      setUpdateNavbar(true);
+    } else {
+      setUpdateNavbar(false);
+    }
+  }
+
+  window.addEventListener("scroll", scrollHandler);
   return (
-    <Disclosure as="nav" className="bg-[#272e5d] fixed z-40 w-screen">
+    <Disclosure
+      as="nav"
+      className={
+        updateNavbar
+          ? "bg-[#272e5d] fixed z-40 w-screen bg-opacity-45 bg-gradient-to-r from-[#1f2658] to-[#272e5d]"
+          : "fixed z-40 w-screen"
+      }
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

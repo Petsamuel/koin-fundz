@@ -1,14 +1,14 @@
 import { Fragment } from "react";
 import { Features } from "../components/Features";
 import { Hero } from "../components/Hero";
-// import { Pricing } from "../components/Pricing";
+// import {Newsletter} from "../components/Newsletter";
 import { Statistics } from "../components/Statistics";
 import { Steps } from "../components/Steps";
 import { Trustees } from "../components/Trustees";
-// import { Cta } from "../components/Cta";
 import { Testimonials } from "../components/Testimonials";
-import { Offerings } from "../components/Offerings"
-
+import { Offerings } from "../components/Offerings";
+// import { Pricing } from "../components/Pricing";
+// import { Cta } from "../components/Cta";
 export const Home = () => {
   return (
     <Fragment>
@@ -19,10 +19,8 @@ export const Home = () => {
       {/* <Pricing /> */}
       <Offerings />
       <Trustees />
-
-      {/* <Cta /> */}
-
       <Testimonials />
+      {/* <Newsletter /> */}
     </Fragment>
   );
 };

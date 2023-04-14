@@ -1,10 +1,7 @@
-
 function ViewProject() {
-    return (
-        <>
-        Loading
-        </>
-    )
+  return <>
+  
+  </>;
 }
 
-export default ViewProject
+export default ViewProject;

@@ -37,7 +37,7 @@ button {
 .statistics-bg,
 .offerings-bg {
   /* background-image: linear-gradient(to bottom, #1c3648, #174861); */
-  background-image: linear-gradient(to right, #1f2658, #272e5d);
+  /* background-image: linear-gradient(to right, #1f2658, #272e5d); */
   height: fit-content;
   background-size: cover;
   background-position: center center;
