@@ -32,9 +32,8 @@ function Offerings() {
             Why Choose Us
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-            At KoinFunds we believes in decentralized fundraising for SMEs using
-            blockchain and smart contracts for secure, transparent, and
-            efficient fundraising without intermediaries.
+            When it comes to crowdfunding, we understand that you have choices.
+            <br /> Here's why we stand out
           </p>
         </motion.div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 text-gray-600">
@@ -52,7 +51,7 @@ function Offerings() {
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                 <path d="M22 4L12 14.01l-3-3"></path>
               </svg>
-              <span className="title-font font-medium">Fast Payouts</span>
+              <span className="title-font font-medium">Expertise</span>
             </div>
           </div>
           <div className="p-2 sm:w-1/2 w-full">
@@ -122,9 +121,7 @@ function Offerings() {
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                 <path d="M22 4L12 14.01l-3-3"></path>
               </svg>
-              <span className="title-font font-medium">
-                Low Transaction Cost
-              </span>
+              <span className="title-font font-medium">Backer Rewards</span>
             </div>
           </div>
           <div className="p-2 sm:w-1/2 w-full">

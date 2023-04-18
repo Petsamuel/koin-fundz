@@ -47,7 +47,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/service"
                 >
                   Services
                 </a>
@@ -55,7 +55,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/faq"
                 >
                   FAQ
                 </a>
@@ -70,7 +70,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/create-project"
                 >
                   Get Started
                 </a>
@@ -86,7 +86,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/create-project"
                 >
                   Share Project
                 </a>

@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-function Features() {
+function Features({title}) {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -30,7 +30,7 @@ function Features() {
           initial={{ opacity: 0, transition: { duration: 1 } }}
         >
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4 text-bold ">
-            What We Offer
+           { title ? title :" What We Offer"}
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
             At KoinFunds we believes in decentralized fundraising for SMEs using
