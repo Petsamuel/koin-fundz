@@ -6,9 +6,9 @@ export const Statistics = () => (
           Statistics So Far
         </h1>
         <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-          pug.
+          Historically, our crowdfunding campaigns have achieved an average
+          success rate of 85%, helping our clients raise over $1 million in
+          funding collectively.
         </p>
       </div>
       <div className="flex flex-wrap -m-4 text-center">

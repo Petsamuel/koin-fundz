@@ -6,6 +6,8 @@ import { About } from "./pages/About";
 import Error from "./components/Error";
 import ViewProject from "./pages/ViewProject";
 import { Listing } from "./pages/Listing";
+import Services from "./pages/Services";
+import { FAQ } from "./pages/FAQ";
 import {
   EthereumClient,
   w3mConnectors,
@@ -72,6 +74,8 @@ function App() {
               <Route exact path="/view-project/:id" element={<ViewProject />} />
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/project-listing" element={<Listing />} />
+              <Route path="/service" element={<Services />} />
+              <Route path="/faq" element={<FAQ />} />
             </Routes>
           </Layout>
         </Router>
