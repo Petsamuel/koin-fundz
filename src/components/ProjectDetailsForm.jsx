@@ -1,13 +1,24 @@
+import { useState } from "react";
 import { useGlobalState } from "../store";
-import { FormField, ImageField } from "./custom/FormField";
+import { FormField, ImageField, SelectField } from "./custom/FormField";
+import { CountryData } from "../store/listdata";
 
 export const ProjectDetail = () => {
   const [projectData, setProjectData] = useGlobalState("projectData");
+  const [step, setStep] = useState(1);
+  const options = ["Profit", "Charity", "Startup", "Non-Profit"];
+
+  function Validator(e) {
+    if (e.target.value !== 3) {
+      setStep(step + 1);
+    } else {
+      alert("complete the form");
+    }
+  }
 
   return (
-    <div className="flex flex-wrap gap-[40px] flex-col">
-
-      <div className="lg:flex gap-[40px] lg:w-4/12">
+    <div className="leading-normal grid ">
+      <div className={step === 1 ? "leading-normal " : "hidden"}>
         <FormField
           labelName="Project Title *"
           placeholder="Robots to clean"
@@ -15,25 +26,87 @@ export const ProjectDetail = () => {
           value={projectData.title}
           handleChange={(e) => {
             setProjectData({ ...projectData, title: e.target.value });
+            Validator(e);
+          }}
+        />
+        <FormField
+          labelName="Description *"
+          placeholder="Write your description"
+          isTextArea
+          value={projectData.description}
+          handleChange={(e) => {
+            setProjectData({
+              ...projectData,
+              description: e.target.value,
+            });
+            Validator(e);
+          }}
+        />
+      </div>
+      <div className={step === 2 ? "" : "hidden"}>
+        <div className="flex gap-5 sm:flex-col">
+          <SelectField
+            labelName="Type *"
+            optionList={options}
+            inputType="select"
+            value={projectData.organizationType}
+            handleChange={(e) => {
+              setProjectData({
+                ...projectData,
+                organizationType: e.target.value,
+              });
+            }}
+          />
+          <FormField
+            labelName="Fundraising Goal *"
+            placeholder="ETH 0.50"
+            inputType="text"
+            value={projectData.goal}
+            handleChange={(e) => {
+              setProjectData({ ...projectData, goal: e.target.value });
+            }}
+          />
+        </div>
+        <div className="grid gap-5 grid-col-2 sm:grid-col-1">
+          <FormField
+            labelName="Country *"
+            placeholder="Nigeria"
+            inputType="text"
+            value={projectData.goal}
+            handleChange={(e) => {
+              setProjectData({ ...projectData, goal: e.target.value });
+            }}
+          />
+          <CountryData />
+          <FormField
+            labelName="State *"
+            placeholder="Lagos"
+            inputType="text"
+            value={projectData.goal}
+            handleChange={(e) => {
+              setProjectData({ ...projectData, goal: e.target.value });
+            }}
+          />
+        </div>
+        <FormField
+          labelName="End Date *"
+          placeholder="End Date"
+          inputType="date"
+          value={projectData.expiresAt}
+          handleChange={(e) => {
+            setProjectData({
+              ...projectData,
+              expiresAt: e.target.value,
+            });
           }}
         />
       </div>
 
-      <div className="col-span-full">
-        <label
-          htmlFor="cover-photo"
-          className="block text-sm font-medium leading-6 text-gray-900"
-        >
-          Cover photo
-        </label>
+      <div className={step === 3 ? "" : "hidden"}>
         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
           {projectData.imageUrl ? (
             <>
-              <ImageField
-                src={projectData.imageUrl}
-                alt="project-photo"
-
-              />
+              <ImageField src={projectData.imageUrl} alt="project-photo" />
             </>
           ) : (
             <div className="text-center">
@@ -57,7 +130,6 @@ export const ProjectDetail = () => {
                   <span>Add </span>
                 </label>
                 <p className="pl-1">Business Image</p>
-
               </div>
               <p className="text-xs leading-5 text-gray-600">URL Link Only</p>
             </div>
@@ -72,58 +144,28 @@ export const ProjectDetail = () => {
           handleChange={(e) => {
             setProjectData({ ...projectData, imageUrl: e.target.value });
           }}
-
         />
       </div>
-      <FormField
-        labelName="Description *"
-        placeholder="Write your description"
-        isTextArea
-        value={projectData.description}
-        handleChange={(e) => {
-          setProjectData({
-            ...projectData,
-            description: e.target.value,
-          });
-        }}
-      />
 
-      <div className="lg:flex gap-8 justify-center">
-        <div>
-          <FormField
-            labelName="Fundraising Goal *"
-            placeholder="ETH 0.50"
-            inputType="text"
-            value={projectData.goal}
-            handleChange={(e) => {
-              setProjectData({ ...projectData, goal: e.target.value });
-            }}
-          />
-        </div>
-        <div className="flex gap-5">
-          <FormField
-            labelName="Start Date *"
-            placeholder="Start Date"
-            inputType="date"
-            value={projectData.expiresAt}
-            handleChange={(e) => { }}
-          />
-          <FormField
-            labelName="End Date *"
-            placeholder="End Date"
-            inputType="date"
-            value={projectData.expiresAt}
-            handleChange={(e) => {
-              setProjectData({
-                ...projectData,
-                expiresAt: e.target.value,
-              });
-            }}
-          />
-        </div>
+      <div className="flex items-center mt-8 gap-4">
+        <button
+          className="inline-flex text-white hover:bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-6 focus:outline-none bg-blueon rounded text-lg transition-all ease-in duration-75"
+          onClick={(e) => Validator(e)}
+        >
+          {step === 3 ? "Submit" : "Next"}
+        </button>
+
+        {step > 1 ? (
+          <button
+            className="inline-flex text-white hover:bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-6 focus:outline-none bg-blueon rounded text-lg transition-all ease-in duration-75"
+            onClick={() => setStep(step - 1)}
+          >
+            Back
+          </button>
+        ) : (
+          ""
+        )}
       </div>
-
-
     </div>
   );
 };

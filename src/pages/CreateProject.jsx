@@ -6,6 +6,7 @@ import { useGlobalState } from "../store";
 import { createProject } from "../services/blockchain";
 import { toTimestamp } from "../helper/toTimestamp";
 import { AlertMessage } from "../components/Alert";
+import { milestone } from "../store/listdata";
 
 export const CreateProject = () => {
   const [companyDetail, setCompanyDetail] = useState(false);
@@ -62,17 +63,11 @@ export const CreateProject = () => {
     setProjectStatus(true);
   };
 
-  const milestone = [
-    "Fill in Project Information",
-    "Organization Information",
-    "Start Project",
-  ];
-
   useEffect(() => {
     let timeout;
 
     if (projectStatus) {
-      // Show the info message for 2 seconds
+      // Show the Alert Message for 2 seconds
       timeout = setTimeout(() => {
         setProjectStatus(null);
       }, 4000);
@@ -86,57 +81,36 @@ export const CreateProject = () => {
   }, [projectStatus]);
 
   return (
-    <div className="bg-gray-200 flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4 ">
-      {/* {isLoading && Loader...} */}
-      <div className={projectStatus === null ? "hidden mt-2" : "block mt-2"}>
-        <AlertMessage projectStatus={projectStatus} />
-      </div>
-      <div className="shadow-md  mx-4 py-8 px-10 bg-white rounded-md my-24 p-[16px] lg:w-11/12">
-        <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2 border-gray-200 ">
-          <div className="pb-4 text-lg ">New Project</div>
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
+        <div className="relative lg:w-1/2 ">
+          <img
+            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            alt=""
+            className="object-cover w-full lg:absolute h-80 lg:h-full"
+          />
+          <svg
+            className="absolute top-0 right-0 hidden h-full text-white lg:inline-block"
+            viewBox="0 0 20 104"
+            fill="currentColor"
+          >
+            <polygon points="17.3036738 5.68434189e-14 20 5.68434189e-14 20 104 0.824555778 104" />
+          </svg>
         </div>
-        <div className="">
-          <Pipeline milestone={milestone} active={active} />
-        </div>
-
-        <form className="flex  flex-col mt-[65px gap-[30px]">
-          {!companyDetail ? <ProjectDetail /> : <CompanyDetails />}
-
-          <div className="flex justify-end items-end mt-[40px] gap-5">
-            {!companyDetail ? (
-              <>
-                <button
-                  className="inline-flex text-white hover:bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-6 focus:outline-none bg-blueon rounded text-lg transition-all ease-in duration-75"
-                  onClick={() => {
-                    setCompanyDetail(true);
-                    setActive(1);
-                  }}
-                >
-                  Proceed
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  className="inline-flex text-white bg-gray-300 border-0 py-2 px-6 focus:outline-none hover:bg-blueon rounded text-lg"
-                  onClick={() => {
-                    setCompanyDetail(false);
-                    setActive(0);
-                  }}
-                >
-                  Previous
-                </button>
-
-                <button
-                  className="inline-flex text-white hover:bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-6 focus:outline-none bg-blueon rounded text-lg transition-all ease-in duration-75"
-                  onClick={(e) => handleSubmit(e)}
-                >
-                  Submit
-                </button>
-              </>
-            )}
+        <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
+          <div>
+            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+              New Project
+            </p>
           </div>
-        </form>
+          <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
+            Campaign Details
+          </h5>
+
+          <div className="mb-5 text-gray-800 ">
+            {!companyDetail ? <ProjectDetail /> : <CompanyDetails />}
+          </div>
+        </div>
       </div>
     </div>
   );

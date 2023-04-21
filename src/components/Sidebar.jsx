@@ -10,7 +10,6 @@ function Sidebar() {
     <>
       <button
         data-drawer-target="default-sidebar"
-        data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
         class="inline-flex items-center  p-2 mt-16 md:hidden ml-3 text-sm text-gray-500 rounded-lg  focus:outline-none focus:ring-2  dark:text-gray-400 z-30 absolute"
@@ -18,7 +17,7 @@ function Sidebar() {
       >
         <span class="sr-only">Open sidebar</span>
         <svg
-          class="w-6 h-6"
+          class="w-4 h-4 border-none focus:border-none"
           aria-hidden="true"
           fill="currentColor"
           viewBox="0 0 20 20"
