@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useGlobalState } from "../store";
 import { FormField, ImageField, SelectField } from "./custom/FormField";
-import { CountryData } from "../store/listdata";
+import { countryName } from "../store/listdata";
 
 export const ProjectDetail = () => {
   const [projectData, setProjectData] = useGlobalState("projectData");
   const [step, setStep] = useState(1);
   const options = ["Profit", "Charity", "Startup", "Non-Profit"];
+  console.log(countryName);
 
   function Validator(e) {
     if (e.target.value !== 3) {
@@ -44,7 +45,7 @@ export const ProjectDetail = () => {
         />
       </div>
       <div className={step === 2 ? "" : "hidden"}>
-        <div className="flex gap-5 sm:flex-col">
+        <div className="grid grid-cols-2 gap-5">
           <SelectField
             labelName="Type *"
             optionList={options}
@@ -67,17 +68,20 @@ export const ProjectDetail = () => {
             }}
           />
         </div>
-        <div className="grid gap-5 grid-col-2 sm:grid-col-1">
-          <FormField
+        <div className="grid grid-cols-2 gap-5">
+          <SelectField
             labelName="Country *"
-            placeholder="Nigeria"
-            inputType="text"
-            value={projectData.goal}
+            optionList={countryName}
+            inputType="select"
+            value={projectData.organizationType}
             handleChange={(e) => {
-              setProjectData({ ...projectData, goal: e.target.value });
+              setProjectData({
+                ...projectData,
+                organizationType: e.target.value,
+              });
             }}
           />
-          <CountryData />
+
           <FormField
             labelName="State *"
             placeholder="Lagos"

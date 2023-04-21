@@ -1,27 +1,16 @@
-import { useState } from "react";
+const URL = "https://restcountries.com/v3.1/all";
+let countryName = [];
 
-const CountryData = () => {
-  const [allCountryInfo, setAllCountryInfo] = useState();
-  const placeholder =[]
-  const URL = "https://restcountries.com/v3.1/all";
-  fetch(URL)
-    .then((response) => response.json())
+fetch(URL)
+  .then((response) => response.json())
 
-    .then((data) => FetchResult(data))
+  .then((data) => data.map((value) => value.name.common))
+  .then((countryNames) => {
+    countryName = countryNames;
+    console.log(countryNames);
+  })
 
-    .catch((error) => console.log(error));
-
-    function FetchResult(data){
-      data.map((value, key)=>{
-        placeholder.push(value.name.common)
-        setAllCountryInfo(placeholder)
-        
-      })
-    }
-    console.log(allCountryInfo)
-
-  // return allCountryInfo;
-};
+  .catch((error) => console.log(error));
 
 const sideBarMenu = [
   { d: "", name: "Dashboard" },
@@ -105,4 +94,4 @@ const faq = [
   },
 ];
 
-export { sideBarMenu, categoryLists, faq, milestone, CountryData };
+export { sideBarMenu, categoryLists, faq, milestone, countryName };
