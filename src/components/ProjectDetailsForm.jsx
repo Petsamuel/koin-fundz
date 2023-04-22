@@ -3,51 +3,40 @@ import { useGlobalState } from "../store";
 import { FormField, ImageField, SelectField } from "./custom/FormField";
 import { countryName } from "../store/listdata";
 
-export const ProjectDetail = () => {
+export const ProjectDetail = ({ steps }) => {
   const [projectData, setProjectData] = useGlobalState("projectData");
-  const [step, setStep] = useState(1);
   const options = ["Profit", "Charity", "Startup", "Non-Profit"];
-  console.log(countryName);
-
-  function Validator(e) {
-    if (e.target.value !== 3) {
-      setStep(step + 1);
-    } else {
-      alert("complete the form");
-    }
-  }
 
   return (
     <div className="leading-normal grid ">
-      <div className={step === 1 ? "leading-normal " : "hidden"}>
+      <div className={steps === 1 ? "leading-normal " : "hidden"}>
         <FormField
           labelName="Project Title *"
           placeholder="Robots to clean"
           inputType="text"
           value={projectData.title}
-          handleChange={(e) => {
-            setProjectData({ ...projectData, title: e.target.value });
-            Validator(e);
-          }}
+          handleChange={(e) =>
+            setProjectData({ ...projectData, title: e.target.value })
+          }
         />
         <FormField
           labelName="Description *"
           placeholder="Write your description"
           isTextArea
           value={projectData.description}
-          handleChange={(e) => {
+          handleChange={(e) =>
             setProjectData({
               ...projectData,
               description: e.target.value,
-            });
-            Validator(e);
-          }}
+            })
+          }
         />
       </div>
-      <div className={step === 2 ? "" : "hidden"}>
+      <div className={steps === 2 ? "" : "hidden"}>
         <div className="grid grid-cols-2 gap-5">
           <SelectField
             labelName="Type *"
+            name="type"
             optionList={options}
             inputType="select"
             value={projectData.organizationType}
@@ -63,33 +52,9 @@ export const ProjectDetail = () => {
             placeholder="ETH 0.50"
             inputType="text"
             value={projectData.goal}
-            handleChange={(e) => {
-              setProjectData({ ...projectData, goal: e.target.value });
-            }}
-          />
-        </div>
-        <div className="grid grid-cols-2 gap-5">
-          <SelectField
-            labelName="Country *"
-            optionList={countryName}
-            inputType="select"
-            value={projectData.organizationType}
-            handleChange={(e) => {
-              setProjectData({
-                ...projectData,
-                organizationType: e.target.value,
-              });
-            }}
-          />
-
-          <FormField
-            labelName="State *"
-            placeholder="Lagos"
-            inputType="text"
-            value={projectData.goal}
-            handleChange={(e) => {
-              setProjectData({ ...projectData, goal: e.target.value });
-            }}
+            handleChange={(e) =>
+              setProjectData({ ...projectData, goal: e.target.value })
+            }
           />
         </div>
         <FormField
@@ -104,9 +69,43 @@ export const ProjectDetail = () => {
             });
           }}
         />
+        <FormField
+          labelName="Email *"
+          placeholder="Support@koinfunds.com"
+          inputType="email"
+          value={projectData.email}
+          handleChange={(e) =>
+            setProjectData({ ...projectData, email: e.target.value })
+          }
+        />
+        <div className="grid grid-cols-2 gap-5">
+          <SelectField
+            name="country"
+            labelName="Country *"
+            optionList={countryName}
+            inputType="select"
+            value={projectData.country}
+            handleChange={(e) => {
+              setProjectData({
+                ...projectData,
+                country: e.target.value,
+              });
+            }}
+          />
+
+          <FormField
+            labelName="State *"
+            placeholder="Lagos"
+            inputType="text"
+            value={projectData.state}
+            handleChange={(e) => {
+              setProjectData({ ...projectData, state: e.target.value });
+            }}
+          />
+        </div>
       </div>
 
-      <div className={step === 3 ? "" : "hidden"}>
+      <div className={steps === 3 ? "" : "hidden"}>
         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
           {projectData.imageUrl ? (
             <>
@@ -150,26 +149,7 @@ export const ProjectDetail = () => {
           }}
         />
       </div>
-
-      <div className="flex items-center mt-8 gap-4">
-        <button
-          className="inline-flex text-white hover:bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-6 focus:outline-none bg-blueon rounded text-lg transition-all ease-in duration-75"
-          onClick={(e) => Validator(e)}
-        >
-          {step === 3 ? "Submit" : "Next"}
-        </button>
-
-        {step > 1 ? (
-          <button
-            className="inline-flex text-white hover:bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-6 focus:outline-none bg-blueon rounded text-lg transition-all ease-in duration-75"
-            onClick={() => setStep(step - 1)}
-          >
-            Back
-          </button>
-        ) : (
-          ""
-        )}
-      </div>
+      
     </div>
   );
 };

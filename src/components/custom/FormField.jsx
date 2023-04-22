@@ -1,4 +1,4 @@
-export const SelectField = ({ value, labelName, optionList, handleChange }) => {
+export const SelectField = ({ value, labelName, optionList, handleChange, name }) => {
   return (
     <label className="flex-1  flex flex-col ">
       {labelName && (

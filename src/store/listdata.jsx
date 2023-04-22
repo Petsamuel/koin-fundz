@@ -7,7 +7,6 @@ fetch(URL)
   .then((data) => data.map((value) => value.name.common))
   .then((countryNames) => {
     countryName = countryNames;
-    console.log(countryNames);
   })
 
   .catch((error) => console.log(error));
