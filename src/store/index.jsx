@@ -5,17 +5,16 @@ const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
   projectData: {
     title: "",
     description: "",
+    organizationType: "Profit",
     goal: "",
     expiresAt: "",
-    organizationType: "Profit",
-    companyName: "",
     email: "",
-    address: "",
     country: "",
     state: "",
-    website: "",
     imageUrl: "",
   },
+  projects: [],
+  stats: null,
 });
 
 export { useGlobalState, setGlobalState, getGlobalState };

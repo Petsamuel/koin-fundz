@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-function Features({title}) {
+function Features({ title }) {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -30,7 +30,7 @@ function Features({title}) {
           initial={{ opacity: 0, transition: { duration: 1 } }}
         >
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4 text-bold ">
-           { title ? title :" What We Offer"}
+            {title ? title : " What We Offer"}
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
             At KoinFunds we believes in decentralized fundraising for SMEs using
@@ -44,9 +44,9 @@ function Features({title}) {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
@@ -61,9 +61,9 @@ function Features({title}) {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
@@ -78,9 +78,9 @@ function Features({title}) {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
@@ -95,9 +95,9 @@ function Features({title}) {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
@@ -112,9 +112,9 @@ function Features({title}) {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
@@ -129,9 +129,9 @@ function Features({title}) {
               <svg
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >

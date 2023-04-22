@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { ProjectDetail } from "../components/ProjectDetailsForm";
 import { useNavigate } from "react-router-dom";
-import { useGlobalState } from "../store";
-import { createProject } from "../services/blockchain";
+import { useGlobalState, getGlobalState } from "../store";
+import { createProject, loadProjects } from "../services/blockchain";
 import { toTimestamp } from "../helper/toTimestamp";
 import { AlertMessage } from "../components/Alert";
 
@@ -10,16 +10,17 @@ export const CreateProject = () => {
   const [message, setMessage] = useState(null);
   const [step, setStep] = useState(1);
   const [projectData, setProjectData] = useGlobalState("projectData");
+  const connectedAccount = getGlobalState("connectedAccount");
   const navigate = useNavigate();
   const {
-    country,
-    description,
-    email,
-    expiresAt,
-    goal,
-    organizationType,
-    state,
     title,
+    description,
+    organizationType,
+    goal,
+    expiresAt,
+    email,
+    country,
+    state,
     imageUrl,
   } = projectData;
 
@@ -47,6 +48,8 @@ export const CreateProject = () => {
       case imageUrl === "":
         setMessage("imageUrl not filled");
         break;
+      case !connectedAccount:
+        setMessage("connect to a wallet");
 
       default:
         await createProject({
@@ -60,17 +63,21 @@ export const CreateProject = () => {
           country,
           state,
         });
+        alert("Created");
+        // TODO alert here
         setMessage(false);
         setStep(step + 1);
         Delay("/project-listing");
         break;
     }
   };
+
   function Delay(props) {
     setTimeout(() => {
       navigate(props);
     }, 4000);
   }
+
   useEffect(() => {
     let timeout;
 
@@ -87,7 +94,6 @@ export const CreateProject = () => {
       }
     };
   }, [message]);
-  console.log(step);
 
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">

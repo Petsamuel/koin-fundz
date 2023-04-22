@@ -23,7 +23,7 @@ contract KoinFunds {
 
     struct statsStruct {
         uint totalProjects;
-        uint totalInvestments;
+        uint totalInvestors;
         uint totalDonations;
     }
 
@@ -37,21 +37,17 @@ contract KoinFunds {
     struct projectStruct {
         uint id;
         address owner;
-        string name;
         string title;
         string description;
-        string imageURL;
-        uint goal;
-        uint raised;
-        uint timestamp;
-        uint expiresAt;
         string organizationType;
-        string companyName;
+        uint goal;
+        uint expiresAt;
         string email;
-        string companyAddress;
         string country;
         string state;
-        string website;
+        string imageUrl;
+        uint raised;
+        uint timestamp;
         uint investors;
         statusEnum status;
     }
@@ -76,49 +72,40 @@ contract KoinFunds {
     function createProject(
         string memory title,
         string memory description,
-        string memory imageURL,
+        string memory imageUrl,
         uint goal,
         uint expiresAt,
         string memory organizationType,
-        string memory companyName,
         string memory email,
-        string memory companyAddress,
         string memory country,
-        string memory website,
         string memory state
     ) public returns (bool) {
         require(bytes(title).length > 0, "Title cannot be empty");
         require(bytes(description).length > 0, "Description cannot be empty");
-        require(bytes(imageURL).length > 0, "Image url cannot be empty");
+        require(bytes(imageUrl).length > 0, "Image url cannot be empty");
         require(goal > 0 ether, "Cost cannot be 0 eth");
         // require(expiresAt > block.timestamp, "Timt too short");
         require(
             bytes(organizationType).length > 0,
             "Organization type cannot be empty"
         );
-        require(bytes(companyName).length > 0, "Company name cannot be empty");
         require(bytes(email).length > 0, "Email cannot be empty");
-        require(bytes(companyAddress).length > 0, "Address cannot be empty");
         require(bytes(country).length > 0, "Country cannot be empty");
         require(bytes(state).length > 0, "State cannot be empty");
-        require(bytes(website).length > 0, "Website cannot be empty");
 
         projectStruct memory project;
         project.id = projectCount;
         project.owner = msg.sender;
         project.title = title;
         project.description = description;
-        project.imageURL = imageURL;
+        project.imageUrl = imageUrl;
         project.goal = goal;
         project.timestamp = block.timestamp;
         project.expiresAt = expiresAt;
         project.organizationType = organizationType;
-        project.companyName = companyName;
         project.email = email;
-        project.companyAddress = companyAddress;
         project.country = country;
         project.state = state;
-        project.website = website;
 
         projects.push(project);
         projectExist[projectCount] = true;
@@ -138,19 +125,19 @@ contract KoinFunds {
         uint id,
         string memory title,
         string memory description,
-        string memory imageURL,
+        string memory imageUrl,
         uint expiresAt
     ) public returns (bool) {
         require(msg.sender == projects[id].owner, "Unauthorized");
         require(projectExist[id], "Project not found");
         require(bytes(title).length > 0, "Title cannot be empty");
         require(bytes(description).length > 0, "Description cannot be empty");
-        require(bytes(imageURL).length > 0, "Image url cannot be empty");
+        require(bytes(imageUrl).length > 0, "Image url cannot be empty");
         // require(expiresAt > block.timestamp, "Timt too short");
 
         projects[id].title = title;
         projects[id].description = description;
-        projects[id].imageURL = imageURL;
+        projects[id].imageUrl = imageUrl;
         projects[id].expiresAt = expiresAt;
 
         emit Action(id, "PROJECT UPDATED", msg.sender, block.timestamp);
@@ -187,7 +174,7 @@ contract KoinFunds {
             "Project no longer active"
         );
 
-        stats.totalInvestments += 1;
+        stats.totalInvestors += 1;
         stats.totalDonations += msg.value;
         projects[id].raised += msg.value;
         projects[id].investors += 1;
@@ -222,7 +209,7 @@ contract KoinFunds {
             investorsOf[id][i].timestamp = block.timestamp;
             payTo(_owner, _contribution);
 
-            stats.totalInvestments -= 1;
+            stats.totalInvestors -= 1;
             stats.totalDonations -= _contribution;
         }
     }

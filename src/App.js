@@ -18,6 +18,7 @@ import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { goerli } from "wagmi/chains";
 import { setGlobalState } from "./store";
 import { CreateProject } from "./pages/CreateProject";
+import { loadProjects } from "./services/blockchain";
 
 const chains = [goerli];
 const projectId = "749eb5afed3979cc3bc2175c60384ff5";
@@ -58,6 +59,8 @@ function App() {
           setGlobalState("connectedAccount", "");
         }
       });
+
+      await loadProjects();
     };
     loadBlockchain();
   }, []);
