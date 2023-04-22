@@ -7,6 +7,12 @@ module.exports = {
     localhost: {
       url: "http://127.0.0.1:8545",
     },
+    goerli: {
+      url: "https://eth-goerli.g.alchemy.com/v2/68zjLjXy0TnMr1G8VXAv6YRWsjsx-I0V",
+      accounts: [
+        `af22d3a85d0b07e3ba1ff9031c7f1beed8718ea584e90d367ec178d64857fbf6`,
+      ],
+    },
   },
   solidity: {
     version: "0.8.11",

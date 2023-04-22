@@ -4,21 +4,15 @@ import { useGlobalState } from "../store";
 import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
-  const [isConnected, setIsConnected] = useState(null);
   const [connectedAccount] = useGlobalState("connectedAccount");
   const navigate = useNavigate();
-  useEffect(() => {
-    if (connectedAccount !== "") {
-      setIsConnected(true);
-    }
-    setIsConnected(false);
-  }, [connectedAccount]);
 
   const WalletConnectCheck = (e) => {
-    if (isConnected) {
+    if (connectedAccount) {
       navigate("/create-project");
+    } else {
+      alert("Connect Wallet...");
     }
-    alert("Connect Wallet...");
   };
 
   return (

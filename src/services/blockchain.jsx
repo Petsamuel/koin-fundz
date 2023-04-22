@@ -1,7 +1,9 @@
 import abi from "../abis/src/contracts/KoinFunds.sol/KoinFunds.json";
 import address from "../abis/contractAddress.json";
 import { ethers } from "ethers";
-import { getGlobalState } from "../store";
+import { getGlobalState, setGlobalState } from "../store";
+import { structureStats } from "../helper/structureStats";
+import { structuredProjects } from "../helper/structureProject";
 
 const { ethereum } = window;
 const contractAddress = address.address;
@@ -21,22 +23,18 @@ export const getEthereumContract = async () => {
 };
 
 export const createProject = async ({
-  address,
-  companyName,
-  country,
-  description,
-  email,
-  expiresAt,
-  goal,
-  organizationType,
-  state,
   title,
+  description,
+  organizationType,
+  goal,
+  expiresAt,
+  email,
+  country,
+  state,
   imageUrl,
-  website,
 }) => {
   try {
     const contract = await getEthereumContract();
-    console.log(contract);
     goal = ethers.utils.parseEther(goal);
     await contract.createProject(
       title,
@@ -45,13 +43,26 @@ export const createProject = async ({
       goal,
       expiresAt,
       organizationType,
-      companyName,
       email,
-      address,
       country,
-      website,
       state
     );
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const loadProjects = async () => {
+  try {
+    if (!ethereum) return alert("Connect wallet");
+
+    const contract = await getEthereumContract();
+    const projects = await contract.getProjects();
+    const stats = await contract.stats();
+
+    console.log(structuredProjects(projects));
+    setGlobalState("projects", structuredProjects(projects));
+    setGlobalState("stats", structureStats(stats));
   } catch (err) {
     console.log(err);
   }
