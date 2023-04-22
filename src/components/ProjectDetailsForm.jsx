@@ -8,7 +8,7 @@ export const ProjectDetail = ({ steps }) => {
   const options = ["Profit", "Charity", "Startup", "Non-Profit"];
 
   return (
-    <div className="leading-normal grid ">
+    <div className="leading-tight grid ">
       <div className={steps === 1 ? "leading-normal " : "hidden"}>
         <FormField
           labelName="Project Title *"
@@ -57,18 +57,7 @@ export const ProjectDetail = ({ steps }) => {
             }
           />
         </div>
-        <FormField
-          labelName="End Date *"
-          placeholder="End Date"
-          inputType="date"
-          value={projectData.expiresAt}
-          handleChange={(e) => {
-            setProjectData({
-              ...projectData,
-              expiresAt: e.target.value,
-            });
-          }}
-        />
+
         <FormField
           labelName="Email *"
           placeholder="Support@koinfunds.com"
@@ -106,6 +95,18 @@ export const ProjectDetail = ({ steps }) => {
       </div>
 
       <div className={steps === 3 ? "" : "hidden"}>
+        <FormField
+          labelName="End Date *"
+          placeholder="End Date"
+          inputType="date"
+          value={projectData.expiresAt}
+          handleChange={(e) => {
+            setProjectData({
+              ...projectData,
+              expiresAt: e.target.value,
+            });
+          }}
+        />
         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
           {projectData.imageUrl ? (
             <>
@@ -149,7 +150,6 @@ export const ProjectDetail = ({ steps }) => {
           }}
         />
       </div>
-      
     </div>
   );
 };

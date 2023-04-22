@@ -90,14 +90,19 @@ export const CreateProject = () => {
   console.log(step);
 
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
-        <div className="relative lg:w-1/2 ">
+        <div className="relative lg:w-1/2">
           <img
             src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
             className="object-cover w-full lg:absolute h-80 lg:h-full"
           />
+          <div className="absolute h-full w-full bg-blueon  bg-opacity-75  place-items-center hidden lg:grid">
+            <h5 className="inline-block px-3 py-px   tracking-wider text-white uppercase  mb-3 text-3xl font-extrabold leading-none sm:text-4xl ">
+              New Project
+            </h5>
+          </div>
           <svg
             className="absolute top-0 right-0 hidden h-full text-white lg:inline-block"
             viewBox="0 0 20 104"
@@ -108,11 +113,12 @@ export const CreateProject = () => {
         </div>
         <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
           <div>
-            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            {/* //TODO: */}
+            {/* <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
               New Project
-            </p>
+            </p> */}
           </div>
-          <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
+          <h5 className="mb-3 text-3xl font-extrabold sm:text-4xl leading-tight pt-5 lg:py-0">
             {step !== 4 ? (
               "Campaign Details"
             ) : (
