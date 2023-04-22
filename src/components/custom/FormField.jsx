@@ -1,4 +1,10 @@
-export const SelectField = ({ value, labelName, optionList, handleChange, name }) => {
+export const SelectField = ({
+  value,
+  labelName,
+  optionList,
+  handleChange,
+  name,
+}) => {
   return (
     <label className="flex-1  flex flex-col ">
       {labelName && (
@@ -10,10 +16,10 @@ export const SelectField = ({ value, labelName, optionList, handleChange, name }
         <select
           onChange={handleChange}
           value={value}
-          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[8px] rounded-[10px] cursor-pointer "
+          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-gray-300 bg-text-[14px] rounded-[10px] bg-transparent"
         >
           {optionList.map((index, key) => (
-            <option value={index} key={key} className="mx-4">
+            <option value={index} key={key}>
               {index}
             </option>
           ))}

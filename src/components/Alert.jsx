@@ -45,7 +45,7 @@ export const AlertMessage = ({ message }) => {
                 ></path>
               </svg>
               <div className="ml-3 text-sm font-medium">
-                Validation Successfull Project Created
+                Submitted Successfully
               </div>
             </div>
           )}
