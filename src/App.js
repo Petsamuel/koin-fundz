@@ -16,7 +16,7 @@ import {
 import { useWeb3ModalTheme, Web3Modal } from "@web3modal/react";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { goerli } from "wagmi/chains";
-import { setGlobalState, useGlobalState } from "./store";
+import { setGlobalState } from "./store";
 import { CreateProject } from "./pages/CreateProject";
 import { loadProjects } from "./services/blockchain";
 
@@ -34,7 +34,6 @@ const ethereumClient = new EthereumClient(wagmiClient, chains);
 
 function App() {
   const { setTheme } = useWeb3ModalTheme();
-  const [connectedAccount] = useGlobalState("connectedAccount");
 
   setTheme({
     themeColor: "blue",
@@ -76,8 +75,7 @@ function App() {
               <Route path="*" element={<Error />} />
               <Route path="/About" element={<About />} />
               <Route exact path="/view-project/:id" element={<ViewProject />} />
-              <Route exact path="/create-project" element={<CreateProject />} />
-
+              <Route path="/create-project" element={<CreateProject />} />
               <Route path="/project-listing" element={<Listing />} />
               <Route path="/service" element={<Services />} />
               <Route path="/faq" element={<FAQ />} />
