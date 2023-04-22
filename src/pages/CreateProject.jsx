@@ -63,7 +63,7 @@ export const CreateProject = () => {
           country,
           state,
         });
-        alert("Created");
+
         // TODO alert here
         setMessage(false);
         setStep(step + 1);
@@ -82,7 +82,7 @@ export const CreateProject = () => {
     let timeout;
 
     if (message) {
-      // Show the Alert Message for 2 seconds
+      // Show the Alert Message for 4 seconds
       timeout = setTimeout(() => {
         setMessage(null);
       }, 4000);

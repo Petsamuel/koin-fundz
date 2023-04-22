@@ -6,12 +6,12 @@ function ProjectListing() {
 
   const Lists = () => {
     return (
-      <div className="relative bg-gray-50">
+      <>
         {projectData.length ? (
-          projectData.map((data) => (
-            <>
-              <div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-100 dark:border-gray-100">
-                <a href={`/request/${data.id}`} key={projectData.email}>
+          <div class="grid gap-8 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16">
+            {projectData.map((data) => (
+              <div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-100 dark:border-gray-100 hover:shadow-lg">
+                <a key={projectData.email}>
                   <img
                     className="rounded-t-lg"
                     src={data.imageUrl && data.imageUrl}
@@ -53,10 +53,7 @@ function ProjectListing() {
                       <span className="text-sm">eth</span>
                     </span>
 
-                    <a
-                      href={`/request/${data.id}`}
-                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blueon dark:hover:bg-blueoff dark:focus:ring-blue-800"
-                    >
+                    <a className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blueon dark:hover:bg-blueoff dark:focus:ring-blue-800">
                       Donate
                       <svg
                         aria-hidden="true"
@@ -75,8 +72,8 @@ function ProjectListing() {
                   </div>
                 </div>
               </div>
-            </>
-          ))
+            ))}
+          </div>
         ) : (
           <>
             <div className="grid grid-cols-4 gap-4 mb-4 xs:cols-1 overflow-y-hidden p-2">
@@ -108,7 +105,7 @@ function ProjectListing() {
             </div>
           </>
         )}
-      </div>
+      </>
     );
   };
 

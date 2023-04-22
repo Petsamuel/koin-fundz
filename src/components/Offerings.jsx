@@ -1,9 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 function Offerings() {
   const control = useAnimation();
   const [ref, inView] = useInView();
+  const navigate = useNavigate;
 
   const variants = {
     visible: { opacity: 2, scale: 1 },
@@ -142,8 +144,13 @@ function Offerings() {
             </div>
           </div>
         </div>
-        <button className="flex mx-auto mt-16 text-white bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-8 focus:outline-none hover:shadow-lg horver:border-1 border-white rounded text-lg">
-          Get Started
+        <button
+          className="flex mx-auto mt-16 text-white bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-8 focus:outline-none hover:shadow-lg horver:border-1 border-white rounded text-lg"
+          onClick={() => {
+            navigate("/about");
+          }}
+        >
+          Read More
         </button>
       </div>
     </section>
