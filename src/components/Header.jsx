@@ -6,7 +6,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const ConnectWalletButton = () => {
   const [connectedAccount] = useGlobalState("connectedAccount");
-
   useEffect(() => {}, [connectedAccount]);
   return <Web3Button />;
 };
@@ -16,9 +15,8 @@ export const Header = () => {
   function scrollHandler() {
     if (window.scrollY >= 20) {
       setUpdateNavbar(true);
-    } else {
-      setUpdateNavbar(false);
     }
+    setUpdateNavbar(false);
   }
 
   window.addEventListener("scroll", scrollHandler);
@@ -27,8 +25,8 @@ export const Header = () => {
       as="nav"
       className={
         updateNavbar
-          ? "fixed z-40 w-screen bg-opacity-10 bg-gradient-to-r from-[#1f2658] to-[#272e5d] shadow-md"
-          : "fixed z-40 w-screen"
+          ? "fixed z-40 w-screen bg-opacity-100 bg-gradient-to-r from-[#1f2658] to-[#272e5d] shadow-lg"
+          : "fixed z-40 w-screen bg-gradient-to-r from-[#1f2658] to-[#272e5d] "
       }
     >
       {({ open }) => (

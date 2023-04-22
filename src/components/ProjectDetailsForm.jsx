@@ -1,39 +1,115 @@
+import { useState } from "react";
 import { useGlobalState } from "../store";
-import { FormField, ImageField } from "./custom/FormField";
+import { FormField, ImageField, SelectField } from "./custom/FormField";
+import { countryName } from "../store/listdata";
 
-export const ProjectDetail = () => {
+export const ProjectDetail = ({ steps }) => {
   const [projectData, setProjectData] = useGlobalState("projectData");
+  const options = ["Profit", "Charity", "Startup", "Non-Profit"];
 
   return (
-    <div className="flex flex-wrap gap-[40px] flex-col">
-
-      <div className="lg:flex gap-[40px] lg:w-4/12">
+    <div className="leading-normal grid ">
+      <div className={steps === 1 ? "leading-normal " : "hidden"}>
         <FormField
           labelName="Project Title *"
           placeholder="Robots to clean"
           inputType="text"
           value={projectData.title}
-          handleChange={(e) => {
-            setProjectData({ ...projectData, title: e.target.value });
-          }}
+          handleChange={(e) =>
+            setProjectData({ ...projectData, title: e.target.value })
+          }
+        />
+        <FormField
+          labelName="Description *"
+          placeholder="Write your description"
+          isTextArea
+          value={projectData.description}
+          handleChange={(e) =>
+            setProjectData({
+              ...projectData,
+              description: e.target.value,
+            })
+          }
         />
       </div>
+      <div className={steps === 2 ? "" : "hidden"}>
+        <div className="grid grid-cols-2 gap-5">
+          <SelectField
+            labelName="Type *"
+            name="type"
+            optionList={options}
+            inputType="select"
+            value={projectData.organizationType}
+            handleChange={(e) => {
+              setProjectData({
+                ...projectData,
+                organizationType: e.target.value,
+              });
+            }}
+          />
+          <FormField
+            labelName="Fundraising Goal *"
+            placeholder="ETH 0.50"
+            inputType="text"
+            value={projectData.goal}
+            handleChange={(e) =>
+              setProjectData({ ...projectData, goal: e.target.value })
+            }
+          />
+        </div>
+        <FormField
+          labelName="End Date *"
+          placeholder="End Date"
+          inputType="date"
+          value={projectData.expiresAt}
+          handleChange={(e) => {
+            setProjectData({
+              ...projectData,
+              expiresAt: e.target.value,
+            });
+          }}
+        />
+        <FormField
+          labelName="Email *"
+          placeholder="Support@koinfunds.com"
+          inputType="email"
+          value={projectData.email}
+          handleChange={(e) =>
+            setProjectData({ ...projectData, email: e.target.value })
+          }
+        />
+        <div className="grid grid-cols-2 gap-5">
+          <SelectField
+            name="country"
+            labelName="Country *"
+            optionList={countryName}
+            inputType="select"
+            value={projectData.country}
+            handleChange={(e) => {
+              setProjectData({
+                ...projectData,
+                country: e.target.value,
+              });
+            }}
+          />
 
-      <div className="col-span-full">
-        <label
-          htmlFor="cover-photo"
-          className="block text-sm font-medium leading-6 text-gray-900"
-        >
-          Cover photo
-        </label>
+          <FormField
+            labelName="State *"
+            placeholder="Lagos"
+            inputType="text"
+            value={projectData.state}
+            handleChange={(e) => {
+              setProjectData({ ...projectData, state: e.target.value });
+            }}
+          />
+        </div>
+      </div>
+
+      <div className={steps === 3 ? "" : "hidden"}>
         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
           {projectData.imageUrl ? (
             <>
-              <ImageField
-                src={projectData.imageUrl}
-                alt="project-photo"
-
-              />
+              <ImageField src={projectData.imageUrl} alt="project-photo" />
             </>
           ) : (
             <div className="text-center">
@@ -57,7 +133,6 @@ export const ProjectDetail = () => {
                   <span>Add </span>
                 </label>
                 <p className="pl-1">Business Image</p>
-
               </div>
               <p className="text-xs leading-5 text-gray-600">URL Link Only</p>
             </div>
@@ -72,58 +147,9 @@ export const ProjectDetail = () => {
           handleChange={(e) => {
             setProjectData({ ...projectData, imageUrl: e.target.value });
           }}
-
         />
       </div>
-      <FormField
-        labelName="Description *"
-        placeholder="Write your description"
-        isTextArea
-        value={projectData.description}
-        handleChange={(e) => {
-          setProjectData({
-            ...projectData,
-            description: e.target.value,
-          });
-        }}
-      />
-
-      <div className="lg:flex gap-8 justify-center">
-        <div>
-          <FormField
-            labelName="Fundraising Goal *"
-            placeholder="ETH 0.50"
-            inputType="text"
-            value={projectData.goal}
-            handleChange={(e) => {
-              setProjectData({ ...projectData, goal: e.target.value });
-            }}
-          />
-        </div>
-        <div className="flex gap-5">
-          <FormField
-            labelName="Start Date *"
-            placeholder="Start Date"
-            inputType="date"
-            value={projectData.expiresAt}
-            handleChange={(e) => { }}
-          />
-          <FormField
-            labelName="End Date *"
-            placeholder="End Date"
-            inputType="date"
-            value={projectData.expiresAt}
-            handleChange={(e) => {
-              setProjectData({
-                ...projectData,
-                expiresAt: e.target.value,
-              });
-            }}
-          />
-        </div>
-      </div>
-
-
+      
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Hero } from "../components/Hero3";
-import { Faq } from "../store/listdata";
+import { faq } from "../store/listdata";
 
 export const FAQ = ({ title }) => {
   return (
@@ -26,7 +26,7 @@ export const FAQ = ({ title }) => {
 
             <div class="grid gap-8 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16">
               {/* <!-- question - start --> */}
-              {Faq.map((index) => (
+              {faq.map((index) => (
                 <div>
                   <h3 class="mb-2 text-lg font-semibold text-gray-900 md:text-xl">
                     {index.question}

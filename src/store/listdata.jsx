@@ -1,12 +1,29 @@
+const URL = "https://restcountries.com/v3.1/all";
+let countryName = [];
+
+fetch(URL)
+  .then((response) => response.json())
+
+  .then((data) => data.map((value) => value.name.common))
+  .then((countryNames) => {
+    countryName = countryNames;
+  })
+
+  .catch((error) => console.log(error));
+
 const sideBarMenu = [
   { d: "", name: "Dashboard" },
   { d: "", name: "Category" },
   { d: "", name: "How it Works" },
   { d: "", name: "Resources" },
 ];
-
+const milestone = [
+  "Fill in Project Information",
+  "Organization Information",
+  "Start Project",
+];
 const categoryLists = ["Non-Profit", "Medical", "Memorial"];
-const Faq = [
+const faq = [
   {
     question: " What is crowdfunding?",
     answer: ` Crowdfunding is a fundraising method that allows individuals
@@ -76,4 +93,4 @@ const Faq = [
   },
 ];
 
-export { sideBarMenu, categoryLists, Faq };
+export { sideBarMenu, categoryLists, faq, milestone, countryName };
