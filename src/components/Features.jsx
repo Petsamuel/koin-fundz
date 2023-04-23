@@ -2,6 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FancyButton } from "./Buttons";
 
 function Features({ title }) {
   const control = useAnimation();
@@ -144,14 +145,14 @@ function Features({ title }) {
             </div>
           </div>
         </div>
-        <button
-          className="flex mx-auto mt-16 text-white bg-gradient-to-r to-indigo-600 from-mainOn border-0 py-2 px-8 focus:outline-none hover:bg-gray-100 hover:shadow-xl rounded text-lg"
-          onClick={() => {
-            navigate("/service");
-          }}
-        >
-          Read More
-        </button>
+        <div className="mx-auto flex justify-center">
+          <FancyButton
+            name="Read More"
+            handleEvent={() => {
+              navigate("/service");
+            }}
+          />
+        </div>
       </div>
     </section>
   );

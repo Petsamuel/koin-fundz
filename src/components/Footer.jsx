@@ -78,7 +78,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/"
                 >
                   Promo
                 </a>
@@ -94,7 +94,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/"
                 >
                   Community
                 </a>
@@ -117,7 +117,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href="/create-project"
+                  href="/project-listing"
                 >
                   Featured Projects
                 </a>
@@ -125,7 +125,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/project-listing"
                 >
                   Discover Projects
                 </a>
@@ -133,7 +133,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/project-listing"
                 >
                   All projects
                 </a>
@@ -148,7 +148,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/faq"
                 >
                   What's Crowdfunding?
                 </a>
@@ -156,7 +156,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/faq"
                 >
                   Start a Project?
                 </a>
@@ -164,7 +164,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/faq"
                 >
                   Connecting to Wallet?
                 </a>
@@ -172,7 +172,7 @@ export const Footer = () => {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800 cursor-pointer "
-                  href=""
+                  href="/faq"
                 >
                   Fund a Project?
                 </a>

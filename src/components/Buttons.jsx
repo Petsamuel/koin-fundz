@@ -33,13 +33,24 @@ export const ToggleButton = ({ handleEvent }) => {
   );
 };
 
-export const GenButton = ({ name, href }) => {
+export const GenButton = ({ name, href, handleEvent }) => {
   return (
     <a
-      href="#"
-      class="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
+      href={href}
+      class=" inline-block rounded-xl border border-blueoff bg-blueoff px-5 py-2.5 text-sm font-medium text-white hover:shadow-xl  focus:outline-none focus:ring active:gray-500 cursor-pointer"
+      onClick={handleEvent}
     >
       {name}
     </a>
+  );
+};
+export const FancyButton = ({ name, handleEvent }) => {
+  return (
+    <button
+      className="inline-flex px-5 py-2.5 text-sm font-medium text-white hover:bg-transparent bg-gradient-to-r to-indigo-600 from-mainOn focus:outline-none rounded-xl cursor-pointer"
+      onClick={handleEvent}
+    >
+      {name}
+    </button>
   );
 };

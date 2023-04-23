@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import HeroPng from "../assets/images/bit2.png";
 import { useGlobalState } from "../store";
 import { useNavigate } from "react-router-dom";
+import { GenButton, FancyButton, ConnectWalletButton } from "./Buttons";
 
 export const Hero = () => {
   const [connectedAccount] = useGlobalState("connectedAccount");
@@ -35,17 +36,14 @@ export const Hero = () => {
             launching a creative project, or making a difference in your
             community, we provide the tools and resources you need to succeed.
           </p>
-          <div className="flex justify-center">
-            <button
-              className="inline-flex text-white bg-gradient-to-r to-indigo-600 from-mainOn
-           border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-              onClick={(e) => WalletConnectCheck(e)}
-            >
-              Get Started
-            </button>
-            <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-              <a href="/project-listing">View Projects</a>
-            </button>
+          <div className="flex justify-center gap-4 items-center place-content-center">
+            <ConnectWalletButton />
+            {connectedAccount ? (
+              <FancyButton
+                name="Get started"
+                handleEvent={(e) => WalletConnectCheck(e)}
+              />
+            ) : null}
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
