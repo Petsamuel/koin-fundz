@@ -1,14 +1,7 @@
-import { useState, useEffect } from "react";
-import { useGlobalState } from "../store";
-import { Web3Button } from "@web3modal/react";
+import { useState } from "react";
+import { ConnectWalletButton } from "./Buttons";
 import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
-const ConnectWalletButton = () => {
-  const [connectedAccount] = useGlobalState("connectedAccount");
-  useEffect(() => {}, [connectedAccount]);
-  return <Web3Button />;
-};
 
 export const Header = () => {
   const [updateNavbar, setUpdateNavbar] = useState(false);
