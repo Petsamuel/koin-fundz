@@ -47,10 +47,12 @@ export const ProjectDetail = ({ steps }) => {
               });
             }}
           />
+
           <FormField
             labelName="Fundraising Goal *"
             placeholder="ETH 0.50"
             inputType="text"
+            isGroup={true}
             value={projectData.goal}
             handleChange={(e) =>
               setProjectData({ ...projectData, goal: e.target.value })

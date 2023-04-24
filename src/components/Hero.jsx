@@ -36,14 +36,21 @@ export const Hero = () => {
             launching a creative project, or making a difference in your
             community, we provide the tools and resources you need to succeed.
           </p>
-          <div className="flex justify-center gap-4 items-center place-content-center">
-            <ConnectWalletButton />
+          <div className="">
             {connectedAccount ? (
-              <FancyButton
-                name="Get started"
-                handleEvent={(e) => WalletConnectCheck(e)}
-              />
-            ) : null}
+              <div className="flex justify-center gap-4 items-center place-content-center">
+                <FancyButton
+                  name="Get started"
+                  handleEvent={(e) => WalletConnectCheck(e)}
+                />
+                <GenButton
+                  name="View Projects"
+                  handleEvent={() => navigate("/project-listing")}
+                />
+              </div>
+            ) : (
+              <ConnectWalletButton />
+            )}
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

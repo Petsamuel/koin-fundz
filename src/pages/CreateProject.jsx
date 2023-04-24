@@ -32,23 +32,23 @@ export const CreateProject = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     switch (true) {
-      case state === "":
-        setMessage("state not filled");
-        break;
-      case country === "":
-        setMessage("country not filled");
+      case title === "":
+        setMessage("title not filled");
         break;
       case description === "":
         setMessage("description not filled");
         break;
-      case expiresAt === "":
-        setMessage("expiresAt not filled");
-        break;
       case organizationType === "":
         setMessage("organizationType not filled");
         break;
-      case title === "":
-        setMessage("title not filled");
+      case expiresAt === "":
+        setMessage("expiresAt not filled");
+        break;
+      case country === "":
+        setMessage("country not filled");
+        break;
+      case state === "":
+        setMessage("state not filled");
         break;
       case imageUrl === "":
         setMessage("imageUrl not filled");
