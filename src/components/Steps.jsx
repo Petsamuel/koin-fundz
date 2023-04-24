@@ -1,9 +1,8 @@
-import stepPng from "../assets/images/steps.svg";
-
+import step2 from "../assets/images/step2.svg";
 export const Steps = () => (
   <section className="text-gray-600 body-font">
     <div className="container px-5 py-24 mx-auto flex flex-wrap">
-      <div className="flex flex-wrap w-full">
+      <div className="flex flex-wrap w-full justify-evenly">
         <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
           <div className="flex relative pb-12">
             <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
@@ -133,9 +132,9 @@ export const Steps = () => (
           </div>
         </div>
         <img
-          className="lg:w-3/5 md:w-1/2 object-fit object-center rounded-lg md:mt-0 mt-0"
+          className="lg:w-2/5 md:w-2/6 object-fit object-center rounded-lg md:mt-0 mt-0"
           // src="https://dummyimage.com/1200x500"
-          src={stepPng}
+          src={step2}
           alt="step"
         />
       </div>

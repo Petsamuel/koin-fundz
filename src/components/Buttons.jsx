@@ -37,7 +37,7 @@ export const GenButton = ({ name, href, handleEvent }) => {
   return (
     <a
       href={href}
-      class=" inline-block rounded-xl border border-blueoff bg-blueoff px-5 py-2.5 text-sm font-medium text-white hover:shadow-xl  focus:outline-none focus:ring active:gray-500 cursor-pointer"
+      class=" inline-block rounded-xl border border-blueon bg-blueon px-5 py-2.5 text-sm font-medium text-white hover:shadow-xl  focus:outline-none focus:ring active:gray-500 cursor-pointer hover:bg-blueoff hover-shadow-sm shadow-white"
       onClick={handleEvent}
     >
       {name}

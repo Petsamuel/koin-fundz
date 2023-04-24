@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ConnectWalletButton } from "./Buttons";
 import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../assets/images/logo.svg";
 
 export const Header = () => {
   const [updateNavbar, setUpdateNavbar] = useState(false);
@@ -37,17 +38,12 @@ export const Header = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mr-8">
-                <div className="flex flex-shrink-0 items-center ">
+              <div className="flex flex-1 items-center justify-center sm:justify-start mr-8">
+                <div className="py-2 items-center ">
                   <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                    className="block h-auto w-20"
+                    src={logo}
+                    alt="Koin Funds"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
