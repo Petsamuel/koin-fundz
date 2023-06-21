@@ -98,7 +98,7 @@ function ProjectListing() {
           <div className=" flex items-center  sm:min-w-[380px]  my-2 border-b-2  ">
             <div className="pb-4 text-lg text-blueoff ">
               <span>All Projects </span>
-              <ToggleButton handleEvent={() => setToggle(!toggle)}/>
+              <ToggleButton handleEvent={() => setToggle(!toggle)} forDesktop={true}/>
                 
 
             </div>

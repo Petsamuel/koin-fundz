@@ -11,12 +11,6 @@ fetch(URL)
 
   .catch((error) => console.log(error));
 
-const sideBarMenu = [
-  { d: "", name: "Dashboard" },
-  { d: "", name: "Category" },
-  { d: "", name: "How it Works" },
-  { d: "", name: "Resources" },
-];
 const milestone = [
   "Fill in Project Information",
   "Organization Information",
@@ -93,4 +87,4 @@ const faq = [
   },
 ];
 
-export { sideBarMenu, categoryLists, faq, milestone, countryName };
+export { categoryLists, faq, milestone, countryName };
